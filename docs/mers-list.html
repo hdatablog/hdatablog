@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="https://hdatablog.github.io/hdatablog/js/jquery.dataTables.min.css">
+		<script src="https://hdatablog.github.io/hdatablog/js/jquery-3.3.1.js"></script>
+		<script src="https://hdatablog.github.io/hdatablog/js/jquery.dataTables.min.js"></script>
+		<style>
+		body {font: 12px/1.5 "Nanum Gothic", "Nanum Gothic", sans-serif;}
+		.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left}
+		.dataTables_wrapper .dataTables_paginate {
+		float: left;
+		text-align: left;
+		padding-top: 0.25em
+		}
+		a, a:link {text-decoration: none;}
+		</style>
+</head>
+
+<body>
+	<div><strong>2015년 발생한 한국의 메르스 환자 현황(2015년 10월12일 정부의 공식 발표자료까지 반영. 이 때까지 치료 중인 5명에 대한 공식 발표는 없었음.)</strong></div>
+	<div>&nbsp;</div>
+<table id="table20" class="display" cellspacing="0" width="100%">
+<thead><tr><th>식별번호</th><th>성별</th><th>나이</th><th>확진 날짜</th><th>상태</th><th>감염 장소</th><th>메르스 노출 날짜</th><th>노출 기간</th><th>환자 개요</th><th>감염 전 상태</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>남</td><td>68</td><td>5월 20일</td><td>퇴원</td><td>자료없음</td><td>자료없음</td><td></td><td>첫 확진자, 9월25일 퇴원</td><td>기타</td></tr>
+<tr><td>2</td><td>여</td><td>63</td><td>5월 20일</td><td>퇴원</td><td>자료없음</td><td>자료없음</td><td></td><td>첫 확진자 부인, 6월5일 퇴원</td><td>가족</td></tr>
+<tr><td>3</td><td>남</td><td>76</td><td>5월 21일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>5월15~17일</td><td>6</td><td>첫 확진자와 같은 병실 입원, 6월4일 사망</td><td>환자</td></tr>
+<tr><td>4</td><td>여</td><td>46</td><td>5월 26일</td><td>퇴원</td><td>평택성모병원</td><td>자료없음</td><td></td><td>3번 확진자의 딸(간병자), 6월16일 퇴원</td><td>가족</td></tr>
+<tr><td>5</td><td>남</td><td>50</td><td>5월 26일</td><td>퇴원</td><td>365서울열린의원</td><td>5월17일</td><td>9</td><td>첫 확진자 청진 및 문진, 6월8일 퇴원</td><td>의료진</td></tr>
+<tr><td>6</td><td>남</td><td>71</td><td>5월 28일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>자료없음</td><td></td><td>첫 확진자와 같은 병동 입원 환자, 6월2일 사망</td><td>환자</td></tr>
+<tr><td>7</td><td>여</td><td>28</td><td>5월 28일</td><td>퇴원</td><td>평택성모병원</td><td>자료없음</td><td>13</td><td>의료진, 6월11일 퇴원</td><td>의료진</td></tr>
+<tr><td>8</td><td>여</td><td>46</td><td>5월 29일</td><td>퇴원</td><td>아산서울의원</td><td>자료없음</td><td>17</td><td>의료진, 6월14일 퇴원</td><td>의료진</td></tr>
+<tr><td>9</td><td>남</td><td>56</td><td>5월 29일</td><td>퇴원</td><td>평택성모병원</td><td>자료없음</td><td>14</td><td>첫 확진자와 같은 층 병실 환자, 6월15일 퇴원</td><td>환자</td></tr>
+<tr><td>10</td><td>남</td><td>44</td><td>5월 29일</td><td>퇴원</td><td>평택성모병원</td><td>5월16일</td><td>13</td><td>첫 확진자와 같은 병실 쓴 3번 확진자 아들로 병문안, 6월25 또는 26일 퇴원</td><td>가족</td></tr>
+<tr><td>11</td><td>여</td><td>79</td><td>5월 29일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>14</td><td>첫 확진자와 같은 병동, 6월19 또는 20일 퇴원</td><td>환자</td></tr>
+<tr><td>12</td><td>여</td><td>49</td><td>5월 29일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>14</td><td>첫 확진자와 같은 병동, 6월16일 퇴원</td><td>환자</td></tr>
+<tr><td>13</td><td>남</td><td>49</td><td>5월 29일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>14</td><td>첫 확진자와 같은 병동, 6월11일 퇴원</td><td>환자</td></tr>
+<tr><td>14</td><td>남</td><td>35</td><td>5월 30일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>15</td><td>첫 확진자와 같은 병동, 6월21 또는 22일 퇴원</td><td>환자</td></tr>
+<tr><td>15</td><td>남</td><td>35</td><td>5월 30일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>15</td><td>첫 확진자와 같은 병동 환자 아들, 6월23 또는 24일 퇴원</td><td>가족</td></tr>
+<tr><td>16</td><td>남</td><td>41</td><td>5월 31일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>16</td><td>첫 확진자와 같은 병동, 6월30-7월2일 퇴원</td><td>환자</td></tr>
+<tr><td>17</td><td>남</td><td>45</td><td>5월 31일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~16일</td><td>16</td><td>첫 확진자와 같은 병동 환자 아들, 6월12일 퇴원</td><td>가족</td></tr>
+<tr><td>18</td><td>여</td><td>77</td><td>5월 31일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~16일</td><td>16</td><td>첫 확진자와 같은 병동, 6월9일 퇴원</td><td>환자</td></tr>
+<tr><td>19</td><td>남</td><td>60</td><td>6월 1일</td><td>퇴원</td><td>평택성모병원</td><td>5월16~17일</td><td>16</td><td>첫 확진자와 같은 병동 환자 보호자, 6월12일 퇴원</td><td>가족</td></tr>
+<tr><td>20</td><td>남</td><td>40</td><td>6월 1일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>17</td><td>첫 확진자와 같은 병동 환자, 6월13일 퇴원</td><td>환자</td></tr>
+<tr><td>21</td><td>여</td><td>59</td><td>6월 1일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>17</td><td>첫 확진자와 같은 병동 환자 보호자, 6월25 또는 26일 퇴원</td><td>가족</td></tr>
+<tr><td>22</td><td>여</td><td>39</td><td>6월 1일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>17</td><td>첫 확진자와 같은 병동 환자 보호자, 6월20 또는 21일 퇴원</td><td>가족</td></tr>
+<tr><td>23</td><td>남</td><td>73</td><td>6월 1일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>4</td><td>16번 확진자와 같은 병실 환자, 6월12일 사망</td><td>환자</td></tr>
+<tr><td>24</td><td>남</td><td>78</td><td>6월 1일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>4</td><td>16번 확진자와 같은 병실 환자, 6월12일 사망</td><td>환자</td></tr>
+<tr><td>25</td><td>여</td><td>57</td><td>6월 1일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>5월15~17일</td><td></td><td>첫 확진자와 같은 병동 환자, 6월1일 사망</td><td>환자</td></tr>
+<tr><td>26</td><td>남</td><td>43</td><td>6월 2일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>18</td><td>첫 확진자와 같은 병동 환자의 보호자, 6월18일 퇴원</td><td>가족</td></tr>
+<tr><td>27</td><td>남</td><td>55</td><td>6월 2일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>18</td><td>첫 확진자와 같은 병동 환자, 6월14일 퇴원</td><td>환자</td></tr>
+<tr><td>28</td><td>남</td><td>58</td><td>6월 2일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>5월15~17일</td><td>18</td><td>첫 확진자와 같은 병동 환자 배우자, 6월14일 사망</td><td>가족</td></tr>
+<tr><td>29</td><td>여</td><td>77</td><td>6월 2일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>18</td><td>첫 확진자와 같은 병동 환자, 6월19 또는 20일 퇴원</td><td>환자</td></tr>
+<tr><td>30</td><td>남</td><td>60</td><td>6월 2일</td><td>퇴원</td><td>대전 대청병원</td><td>5월22~28일</td><td>11</td><td>16번 확진자와 같은 병실 환자, 7월5일 퇴원</td><td>환자</td></tr>
+<tr><td>31</td><td>남</td><td>69</td><td>6월 4일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>7</td><td>16번 확진자와 같은 병실 환자, 6월17 또는 18일 사망</td><td>환자</td></tr>
+<tr><td>32</td><td>남</td><td>54</td><td>6월 4일</td><td>퇴원</td><td>평택성모병원</td><td>5월15일</td><td>20</td><td>첫 확진자와 같은 병동 환자 병문안, 6월18일 퇴원</td><td>기타</td></tr>
+<tr><td>33</td><td>남</td><td>47</td><td>6월 4일</td><td>퇴원</td><td>평택성모병원</td><td>5월15일</td><td>20</td><td>첫 확진자와 같은 병동 환자 병문안, 6월14일 퇴원</td><td>기타</td></tr>
+<tr><td>34</td><td>여</td><td>25</td><td>6월 4일</td><td>퇴원</td><td>평택성모병원</td><td>5월15~17일</td><td>20</td><td>첫 확진자가 있는 병동 근무 의료진, 6월10일 퇴원</td><td>의료진</td></tr>
+<tr><td>35</td><td>남</td><td>38</td><td>6월 4일</td><td>치료중</td><td>삼성서울병원</td><td>5월27일</td><td>8</td><td>14번 확진자 입원한 응급실 의료진</td><td>의료진</td></tr>
+<tr><td>36</td><td>남</td><td>82</td><td>6월 4일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28일</td><td></td><td>16번 확진자와 같은 병실 환자, 6월3일 사망</td><td>환자</td></tr>
+<tr><td>37</td><td>남</td><td>45</td><td>6월 5일</td><td>퇴원</td><td>평택성모병원</td><td>5월14~27일</td><td>21</td><td>확진자 1  9 11 12 14와 같은 병동 환자, 6월11일 퇴원</td><td>환자</td></tr>
+<tr><td>38</td><td>남</td><td>49</td><td>6월 5일</td><td style="color:red;">사망</td><td>대전 대청병원</td><td>5월14~31일</td><td>14</td><td>16번 확진자와 같은 병실 환자, 6월15일 사망</td><td>환자</td></tr>
+<tr><td>39</td><td>남</td><td>62</td><td>6월 5일</td><td>퇴원</td><td>평택성모병원</td><td>5월20~28일</td><td>16</td><td>확진자 9 11 12 14와 같은 병동 환자, 6월18일 퇴원</td><td>환자</td></tr>
+<tr><td>40</td><td>남</td><td>24</td><td>6월 5일</td><td>퇴원</td><td>평택성모병원</td><td>5월22~28일</td><td>14</td><td>9번 14번 확진자와 같은 병실 환자, 6월17일 퇴원</td><td>환자</td></tr>
+<tr><td>41</td><td>여</td><td>70</td><td>6월 5일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>9</td><td>14번 확진자가 입원중인 응급실 방문, 6월14일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>42</td><td>여</td><td>54</td><td>6월 5일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>5월19~20일</td><td>17</td><td>7층 병동 환자, 6월17 또는 18일 사망</td><td>환자</td></tr>
+<tr><td>43</td><td>여</td><td>24</td><td>6월 6일</td><td>퇴원</td><td>평택성모병원</td><td>자료없음</td><td></td><td>7층 병동 근무 의료진, 6월19 또는 20일 퇴원</td><td>의료진</td></tr>
+<tr><td>44</td><td>여</td><td>51</td><td>6월 6일</td><td>퇴원</td><td>평택성모병원</td><td>5월18~28일</td><td>19</td><td>7층 병동 환자, 6월17일 퇴원</td><td>환자</td></tr>
+<tr><td>45</td><td>남</td><td>65</td><td>6월 6일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>9</td><td>16번 확진자와 같은 병동 환자 배우자, 6월24일 사망</td><td>가족</td></tr>
+<tr><td>46</td><td>남</td><td>55</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>14번 확진자가 입원한 응급실에 67번 확진자 보호자로 체류, 6월22 또는 23일 퇴원</td><td>가족</td></tr>
+<tr><td>47</td><td>여</td><td>68</td><td>6월 6일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>14번 확진자가 입원한 응급실 환자, 6월8일 사망</td><td>환자</td></tr>
+<tr><td>48</td><td>남</td><td>39</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월28일</td><td>9</td><td>14번 확진자가 입원한 병실 환자 배우자, 7월10일 퇴원</td><td>가족</td></tr>
+<tr><td>49</td><td>남</td><td>75</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>14번 확진자가 입원한 응급실 환자, 6월20 또는 21일 퇴원</td><td>환자</td></tr>
+<tr><td>50</td><td>여</td><td>81</td><td>6월 6일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>14번 확진자가 입원한 응급실 환자, 6월29일 사망</td><td>환자</td></tr>
+<tr><td>51</td><td>여</td><td>72</td><td>6월 6일</td><td style="color:red;">사망</td><td>평택성모병원</td><td>5월12~21일</td><td>22</td><td>입원 환자, 6월12일 사망</td><td>환자</td></tr>
+<tr><td>52</td><td>여</td><td>54</td><td>6월 6일</td><td>퇴원</td><td>평택성모병원</td><td>5월23~28일</td><td>14</td><td>입원 환자, 6월19일 퇴원</td><td>환자</td></tr>
+<tr><td>53</td><td>남</td><td>51</td><td>6월 6일</td><td>퇴원</td><td>평택성모병원</td><td>5월26~28일</td><td>11</td><td>입원 환자, 6월22 또는 23일 퇴원</td><td>환자</td></tr>
+<tr><td>54</td><td>여</td><td>63</td><td>6월 6일</td><td>퇴원</td><td>대전 대청병원</td><td>5월22~28일</td><td>15</td><td>16번 확진자와 같은 병실 환자 간병, 7월4일 퇴원</td><td>간병</td></tr>
+<tr><td>55</td><td>남</td><td>36</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월26~28일</td><td>10</td><td>응급실 입원한 아버지 간병, 6월20 또는 21일 퇴원</td><td>가족</td></tr>
+<tr><td>56</td><td>남</td><td>45</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월26~6월1일</td><td>10</td><td>응급실 입원, 6월15일 퇴원</td><td>환자</td></tr>
+<tr><td>57</td><td>남</td><td>57</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>응급실 내원, 6월18일 퇴원</td><td>환자</td></tr>
+<tr><td>58</td><td>남</td><td>55</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>응급실 내원, 7월11일 퇴원</td><td>환자</td></tr>
+<tr><td>59</td><td>남</td><td>44</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>응급실 내원, 6월17일 퇴원</td><td>환자</td></tr>
+<tr><td>60</td><td>여</td><td>37</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>10</td><td>응급실 근무 의료진, 6월19일 퇴원</td><td>의료진</td></tr>
+<tr><td>61</td><td>남</td><td>55</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~58일</td><td>10</td><td>응급실 입원, 9월19일 퇴원</td><td>환자</td></tr>
+<tr><td>62</td><td>남</td><td>32</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>10</td><td>응급실 체류, 6월17일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>63</td><td>여</td><td>68</td><td>6월 6일</td><td>퇴원</td><td>삼성서울병원</td><td>5월28~29일</td><td>9</td><td>응급실 내원, 6월29일 퇴원</td><td>환자</td></tr>
+<tr><td>64</td><td>남</td><td>75</td><td>6월 6일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~29일</td><td>10</td><td>응급실 내원, 6월5일 사망</td><td>환자</td></tr>
+<tr><td>65</td><td>여</td><td>55</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실에 57번 확진자 아내로 체류, 6월22 또는 23일 퇴원</td><td>가족</td></tr>
+<tr><td>66</td><td>여</td><td>42</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~30일</td><td>11</td><td>응급실 입원, 6월25 또는 26일 퇴원</td><td>환자</td></tr>
+<tr><td>67</td><td>남</td><td>16</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 입원 이후 병원에 계속 체류, 6월20 또는 21일 퇴원 뒤 다른 질병 치료</td><td>환자</td></tr>
+<tr><td>68</td><td>여</td><td>55</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 방문, 6월20 또는 21일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>69</td><td>남</td><td>57</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 체류, 6월21 또는 22일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>70</td><td>남</td><td>59</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>11</td><td>응급실 체류, 6월18일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>71</td><td>여</td><td>40</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 내원, 6월17일 퇴원</td><td>환자</td></tr>
+<tr><td>72</td><td>남</td><td>56</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 내원, 6월23 또는 24일 퇴원</td><td>환자</td></tr>
+<tr><td>73</td><td>여</td><td>65</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실 입원, 6월25 또는 26일 퇴원</td><td>환자</td></tr>
+<tr><td>74</td><td>남</td><td>71</td><td>6월 7일</td><td>치료중</td><td>삼성서울병원</td><td>5월27일</td><td>11</td><td>응급실에 73번 확진자 남편으로 체류</td><td>가족</td></tr>
+<tr><td>75</td><td>남</td><td>62</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월25~28일</td><td>11</td><td>응급실 내원, 6월25 또는 26일 퇴원</td><td>환자</td></tr>
+<tr><td>76</td><td>여</td><td>75</td><td>6월 7일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~28일</td><td>11</td><td>응급실 입원, 6월10일 사망</td><td>환자</td></tr>
+<tr><td>77</td><td>남</td><td>64</td><td>6월 7일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~28일</td><td>11</td><td>응급실 내원, 6월17 또는 18일 사망</td><td>환자</td></tr>
+<tr><td>78</td><td>여</td><td>41</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>11</td><td>응급실 근무 의료진, 6월23 또는 24일 퇴원</td><td>의료진</td></tr>
+<tr><td>79</td><td>여</td><td>24</td><td>6월 7일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>11</td><td>응급실 근무 의료진, 6월22 또는 23일 퇴원</td><td>의료진</td></tr>
+<tr><td>80</td><td>남</td><td>35</td><td>6월 7일</td><td>치료중</td><td>삼성서울병원</td><td>5월27~29일</td><td>11</td><td>응급실 입원, 10월3일 퇴원했다가 11일 다시 입원, 12일 다시 양성 판정</td><td>환자</td></tr>
+<tr><td>81</td><td>남</td><td>62</td><td>6월 7일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월28일</td><td>10</td><td>응급실 체류, 6월14일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>82</td><td>여</td><td>82</td><td>6월 7일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>10</td><td>16번 확진자와 같은 병실 환자 간병, 6월17 또는 18일 사망</td><td>간병</td></tr>
+<tr><td>83</td><td>남</td><td>65</td><td>6월 7일</td><td style="color:red;">사망</td><td>대전 건양대병원</td><td>5월28~30일</td><td>10</td><td>16번 확진자와 같은 병동 환자, 6월11일 사망</td><td>환자</td></tr>
+<tr><td>84</td><td>남</td><td>80</td><td>6월 7일</td><td style="color:red;">사망</td><td>대전 대청병원</td><td>5월25~28일</td><td>13</td><td>16번 확진자와 같은 병동 입원, 6월8일 사망</td><td>환자</td></tr>
+<tr><td>85</td><td>여</td><td>66</td><td>6월 7일</td><td>퇴원</td><td>대전 대청병원</td><td>5월25~28일</td><td>13</td><td>16번 확진자와 같은 병실 환자 간병, 6월24 또는 25일 퇴원</td><td>간병</td></tr>
+<tr><td>86</td><td>여</td><td>76</td><td>6월 7일</td><td>퇴원</td><td>대전 대청병원</td><td>5월25~28일</td><td>13</td><td>16번 확진자와 같은 병동 입원, 6월30 또는 7월1일 퇴원</td><td>환자</td></tr>
+<tr><td>87</td><td>여</td><td>79</td><td>6월 7일</td><td style="color:red;">사망</td><td>대전 대청병원</td><td>5월25~28일</td><td>13</td><td>16번 확진자와 같은 병동 입원, 6월25 또는 26일 사망</td><td>환자</td></tr>
+<tr><td>88</td><td>남</td><td>47</td><td>6월 8일</td><td>퇴원</td><td>서울 여의도성모병원</td><td>5월28일</td><td></td><td>6번 확진자 사위로 병실 체류, 6월15일 퇴원</td><td>가족</td></tr>
+<tr><td>89</td><td>남</td><td>59</td><td>6월 8일</td><td>퇴원</td><td>삼성서울병원</td><td>5월28일</td><td>11</td><td>응급실 체류, 6월30 또는 7월1일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>90</td><td>남</td><td>62</td><td>6월 8일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>12</td><td>응급실 내원, 6월10일 사망</td><td>환자</td></tr>
+<tr><td>91</td><td>남</td><td>46</td><td>6월 8일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>14번 확진자가 있는 응급실 체류, 7월8 또는 9일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>92</td><td>남</td><td>27</td><td>6월 8일</td><td>퇴원</td><td>서울아산병원</td><td>5월26일</td><td>13</td><td>6번 확진자가 있는 응급실 체류, 6월25 또는 26일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>93</td><td>여</td><td>64</td><td>6월 8일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월28~29일</td><td>11</td><td>15번 확진자와 같은 병실 체류, 6월22 또는 23일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>94</td><td>남</td><td>71</td><td>6월 8일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월27~28일</td><td>12</td><td>15번 확진자와 같은 병실 입원, 7월8일 퇴원</td><td>환자</td></tr>
+<tr><td>95</td><td>남</td><td>76</td><td>6월 8일</td><td>퇴원</td><td>대전 건양대병원</td><td>자료없음</td><td></td><td>16번 확진자와 접촉, 6월30일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>96</td><td>여</td><td>42</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 6월27일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>97</td><td>남</td><td>46</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 6월23 또는 24일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>98</td><td>남</td><td>58</td><td>6월 9일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 6월15일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>99</td><td>남</td><td>48</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>50번 확진자의 사위로 응급실 체류, 6월19일 퇴원</td><td>가족</td></tr>
+<tr><td>100</td><td>여</td><td>32</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 내원, 6월22 또는 23일 퇴원</td><td>환자</td></tr>
+<tr><td>101</td><td>남</td><td>84</td><td>6월 9일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월26~27일</td><td>13</td><td>응급실 내원, 6월21 또는 22일 사망</td><td>환자</td></tr>
+<tr><td>102</td><td>여</td><td>48</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 내원, 6월22 또는 23일 퇴원</td><td>환자</td></tr>
+<tr><td>103</td><td>남</td><td>66</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>입원 중 14번 확진자와 응급실에서 접촉, 6월29일 퇴원</td><td>환자</td></tr>
+<tr><td>104</td><td>남</td><td>55</td><td>6월 9일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 6월27일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>105</td><td>남</td><td>63</td><td>6월 9일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 6월19일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>106</td><td>여</td><td>60</td><td>6월 9일</td><td>퇴원</td><td>대전 건양대병원</td><td>5월28~30일</td><td>12</td><td>16번 확진자와 같은 병동 환자 간병, 6월24 또는 25일 퇴원</td><td>간병</td></tr>
+<tr><td>107</td><td>여</td><td>64</td><td>6월 9일</td><td>퇴원</td><td>대전 대청병원</td><td>자료없음</td><td></td><td>대청병원 간병인으로 16번 확진자와 같은 병동 환자(87번) 간병, 6월19 또는 20일 퇴원</td><td>간병인</td></tr>
+<tr><td>108</td><td>여</td><td>32</td><td>6월 9일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월29~31일</td><td>11</td><td>15번 확진자와 같은 병동 환자인 아버지 간호, 6월25 또는 26일 퇴원</td><td>가족</td></tr>
+<tr><td>109</td><td>여</td><td>39</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>14</td><td>응급실 체류, 6월21 또는 22일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>110</td><td>여</td><td>57</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월28일</td><td>13</td><td>14번 확진자가 있는 응급실 체류, 7월4일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>111</td><td>여</td><td>43</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 6월22 또는 23일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>112</td><td>남</td><td>63</td><td>6월 10일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 6월20일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>113</td><td>남</td><td>64</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>14번 확진자가 있는 응급실 내원, 6월19일 퇴원</td><td>환자</td></tr>
+<tr><td>114</td><td>남</td><td>46</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>14</td><td>14번 확진자와 같은 응급실 체류, 6월23 또는 24일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>115</td><td>여</td><td>77</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>외래 환자, 6월19일 퇴원</td><td>환자</td></tr>
+<tr><td>116</td><td>여</td><td>56</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 6월21 또는 22일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>117</td><td>여</td><td>25</td><td>6월 10일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월27~29일</td><td>14</td><td>15번 확진자 접촉한 의료진, 7월3일 퇴원</td><td>의료진</td></tr>
+<tr><td>118</td><td>여</td><td>67</td><td>6월 10일</td><td style="color:red;">사망</td><td>평택굿모닝병원</td><td>5월25~27일</td><td>16</td><td>14번 확진자와 같은 병동 체류, 6월13일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>119</td><td>남</td><td>35</td><td>6월 10일</td><td>퇴원</td><td>조사중</td><td>자료없음</td><td>10</td><td>52번 확진자와 같은 병원 체류(잠정 결론), 7월18일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>120</td><td>남</td><td>75</td><td>6월 10일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~29일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 6월19일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>121</td><td>남</td><td>76</td><td>6월 10일</td><td>퇴원</td><td>평택굿모닝병원</td><td>5월25~27일</td><td>16</td><td>14번 확진자와 같은 병동 입원, 6월22 또는 23일 퇴원</td><td>환자</td></tr>
+<tr><td>122</td><td>여</td><td>55</td><td>6월 10일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 7월4일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>123</td><td>남</td><td>65</td><td>6월 11일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~29일</td><td>15</td><td>14번 확진자가 있는 응급실 체류, 6월15일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>124</td><td>남</td><td>36</td><td>6월 11일</td><td>퇴원</td><td>삼성서울병원</td><td>5월28~29일</td><td>14</td><td>14번 확진자가 있는 응급실 체류, 6월30 또는 7월1일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>125</td><td>남</td><td>56</td><td>6월 11일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>15</td><td>14번 확진자가 있는 응급실 체류, 6월22 또는 23일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>126</td><td>여</td><td>70</td><td>6월 11일</td><td>퇴원</td><td>평택굿모닝병원</td><td>5월27일</td><td>15</td><td>14번 확진자가 입원한 병원에서 간병, 6월23 또는 24일 퇴원</td><td>간병</td></tr>
+<tr><td>127</td><td>여</td><td>76</td><td>6월 12일</td><td>퇴원</td><td>대전 건양대병원</td><td>5월28~30일</td><td>15</td><td>16번 확진자와 같은 병실 체류, 6월30-7월2일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>128</td><td>남</td><td>87</td><td>6월 12일</td><td style="color:red;">사망</td><td>대전 대청병원</td><td>5월22~28일</td><td>21</td><td>16번 확진자와 같은 병실 입원, 6월21 또는 22일 사망</td><td>환자</td></tr>
+<tr><td>129</td><td>남</td><td>86</td><td>6월 12일</td><td>퇴원</td><td>대전 대청병원</td><td>5월22~28일</td><td>21</td><td>16번 확진자와 같은 병동 입원, 9월1일 퇴원</td><td>환자</td></tr>
+<tr><td>130</td><td>여</td><td>65</td><td>6월 12일</td><td>퇴원</td><td>대전 대청병원</td><td>5월22~28일</td><td>21</td><td>16번 확진자와 같은 병동 환자 간병, 6월20 또는 21일 퇴원</td><td>간병</td></tr>
+<tr><td>131</td><td>남</td><td>59</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>16</td><td>14번 확진자가 있는 응급실 체류, 6월22 또는 23일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>132</td><td>남</td><td>55</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>16</td><td>14번 확진자가 있는 응급실 체류, 6월30-7월2일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>133</td><td>남</td><td>70</td><td>6월 12일</td><td style="color:red;">사망</td><td>구급차</td><td>6월5일, 6일</td><td>7</td><td>76번 확진자 운송 구급차 운전자, 7월8일 사망</td><td>기타</td></tr>
+<tr><td>134</td><td>여</td><td>68</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>16</td><td>14번 확진자가 있는 응급실 체류, 6월19 또는 20일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>135</td><td>남</td><td>33</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월29일</td><td>14</td><td>14번 확진자가 있는 응급실 체류 안전요원, 9월17일 퇴원</td><td>기타</td></tr>
+<tr><td>136</td><td>남</td><td>67</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>16</td><td>14번 확진자가 있는 응급실 체류, 6월30일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>137</td><td>남</td><td>55</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>16</td><td>14번 확진자가 있는 응급실 체류 이송요원, 7월11일 퇴원</td><td>기타</td></tr>
+<tr><td>138</td><td>남</td><td>37</td><td>6월 12일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>16</td><td>14번 확진자가 있는 응급실 체류, 6월18일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>139</td><td>여</td><td>64</td><td>6월 13일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>17</td><td>14번 확진자가 있는 응급실 체류, 6월19 또는 20일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>140</td><td>여</td><td>80</td><td>6월 13일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~28일</td><td>17</td><td>14번 확진자가 있는 응급실 체류, 6월25 또는 26일 사망</td><td>발표자료 불명확</td></tr>
+<tr><td>141</td><td>남</td><td>42</td><td>6월 13일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>17</td><td>외래 내원 환자 동행, 6월28일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>142</td><td>남</td><td>31</td><td>6월 13일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>17</td><td>14번 확진자가 있는 응급실 체류, 6월19 또는 20일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>143</td><td>남</td><td>31</td><td>6월 13일</td><td>퇴원</td><td>대전 대청병원</td><td>5월25~28일</td><td>19</td><td>16번 확진자가 있는 병원 체류, 6월24 또는 25일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>144</td><td>남</td><td>71</td><td>6월 13일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월27~29일</td><td>17</td><td>15번 확진자와 같은 층 입원, 6월20 또는 21일 퇴원</td><td>환자</td></tr>
+<tr><td>145</td><td>남</td><td>37</td><td>6월 13일</td><td>퇴원</td><td>구급차</td><td>6월5일, 6일</td><td>7</td><td>76번 확진자 운송 구급차 동승, 6월24 또는 25일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>146</td><td>남</td><td>55</td><td>6월 14일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>18</td><td>14번 확진자가 있는 응급실 체류, 8월28일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>147</td><td>여</td><td>46</td><td>6월 14일</td><td>퇴원</td><td>송태의내과의원</td><td>6월8일</td><td>6</td><td>123번 확진자와 같은 의원급 의료기관 체류, 6월30-7월2일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>148</td><td>여</td><td>39</td><td>6월 14일</td><td>퇴원</td><td>대전 건양대병원</td><td>6월3일</td><td>9</td><td>36번 확진자에게 심폐소생술한 의료진, 7월4일 퇴원</td><td>의료진</td></tr>
+<tr><td>149</td><td>여</td><td>84</td><td>6월 14일</td><td>퇴원</td><td>대전 대청병원</td><td>5월22~28일</td><td>23</td><td>16번 확진자와 같은 응급실, 병동 입원, 6월30-7월2일 퇴원</td><td>환자</td></tr>
+<tr><td>150</td><td>남</td><td>44</td><td>6월 14일</td><td>퇴원</td><td>건국대병원</td><td>6월6일</td><td>8</td><td>76번 확진자와 같은 병실 체류, 6월28일 퇴원</td><td>발표자료 불명확</td></tr>
+<tr><td>151</td><td>여</td><td>38</td><td>6월 15일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>19</td><td>가족 간병을 위해 응급실 방문, 6월22 또는 23일 퇴원</td><td>간병</td></tr>
+<tr><td>152</td><td>남</td><td>66</td><td>6월 15일</td><td>치료중</td><td>삼성서울병원</td><td>5월27일</td><td>19</td><td>가족 간병을 위해 응급실 방문</td><td>간병</td></tr>
+<tr><td>153</td><td>여</td><td>61</td><td>6월 15일</td><td>퇴원</td><td>양지 서울삼성의원</td><td>6월5일</td><td>10</td><td>118번 확진자와 같은 의원급 의료기관 내원, 6월23 또는 24일 퇴원</td><td>환자</td></tr>
+<tr><td>154</td><td>남</td><td>52</td><td>6월 15일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~28일</td><td>19</td><td>가족 간병을 위해 응급실 방문, 6월25 또는 26일 퇴원</td><td>간병</td></tr>
+<tr><td>155</td><td>여</td><td>42</td><td>6월 16일</td><td>퇴원</td><td>삼성서울병원</td><td>5월26~29일</td><td>21</td><td>응급실 내원, 6월24 또는 25일 퇴원</td><td>환자</td></tr>
+<tr><td>156</td><td>남</td><td>66</td><td>6월 16일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>20</td><td>응급실 내원, 7월3일 퇴원</td><td>환자</td></tr>
+<tr><td>157</td><td>남</td><td>60</td><td>6월 16일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>20</td><td>응급실 내원, 7월10일 퇴원</td><td>환자</td></tr>
+<tr><td>158</td><td>남</td><td>50</td><td>6월 16일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27일</td><td>20</td><td>가족 진료를 위해 응급실 방문, 6월25 또는 26일 퇴원</td><td>가족</td></tr>
+<tr><td>159</td><td>남</td><td>49</td><td>6월 16일</td><td>퇴원</td><td>한림대동탄성심병원</td><td>5월27~29일</td><td>20</td><td>15번 확진자와 같은 병실 입원, 6월22 또는 23일 퇴원</td><td>환자</td></tr>
+<tr><td>160</td><td>남</td><td>31</td><td>6월 16일</td><td>퇴원</td><td>강동경희대병원</td><td>6월5일</td><td>9</td><td>76번 확진자 내원 때 응급실 의료진, 6월24 또는 25일 퇴원</td><td>의료진</td></tr>
+<tr><td>161</td><td>여</td><td>79</td><td>6월 16일</td><td>퇴원</td><td>평택굿모닝병원</td><td>5월27일</td><td>20</td><td>17번 확진자와 같은 병동 입원, 6월24 또는 25일 퇴원</td><td>환자</td></tr>
+<tr><td>162</td><td>남</td><td>33</td><td>6월 16일</td><td>퇴원</td><td>삼성서울병원</td><td>6월11~12일</td><td>5</td><td>72번 80번 135번 137번 확진자 맡은 방사선 기사, 7월22일 퇴원</td><td>의료진</td></tr>
+<tr><td>163</td><td>여</td><td>53</td><td>6월 17일</td><td>퇴원</td><td>아산충무병원</td><td>6월5~9일</td><td>12</td><td>119번 확진자와 같은 병동에 있던 의료진, 8월6일 퇴원</td><td>의료진</td></tr>
+<tr><td>164</td><td>여</td><td>35</td><td>6월 17일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>75번 80번 확진자와 같은 병동에 있던 의료진, 7월8 또는 9일 퇴원</td><td>의료진</td></tr>
+<tr><td>165</td><td>남</td><td>79</td><td>6월 18일</td><td>치료중</td><td>강동경희대병원</td><td>6월5~6일</td><td>13</td><td>76번 확진자가 있던 병원에서 투석 받던 환자</td><td>환자</td></tr>
+<tr><td>166</td><td>남</td><td>62</td><td>6월 18일</td><td>퇴원</td><td>조사중</td><td>자료없음</td><td></td><td>삼성서울병원 환자 가족(역학조사 진행 중), 6월30-7월2일 퇴원</td><td>가족</td></tr>
+<tr><td>167</td><td>남</td><td>53</td><td>6월 20일</td><td>퇴원</td><td>강동경희대병원</td><td>6월5일</td><td>15</td><td>76번 확진자가 있던 응급실 내원, 7월7일 퇴원</td><td>환자</td></tr>
+<tr><td>168</td><td>남</td><td>36</td><td>6월 20일</td><td>퇴원</td><td>건국대병원</td><td>6월6일</td><td>14</td><td>76번 확진자 엑스선 촬영 방사선사, 6월30 또는 7월1일 퇴원</td><td>의료진</td></tr>
+<tr><td>169</td><td>남</td><td>34</td><td>6월 20일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>135번 확진자 담당 중환자실 의사, 7월8 또는 9일 퇴원</td><td>의료진</td></tr>
+<tr><td>170</td><td>남</td><td>77</td><td>6월 21일</td><td>퇴원</td><td>건국대병원</td><td>6월6일</td><td>15</td><td>76번 확진자와 같은 병동 입원, 7월14일 퇴원</td><td>환자</td></tr>
+<tr><td>171</td><td>여</td><td>60</td><td>6월 21일</td><td>퇴원</td><td>삼성서울병원</td><td>5월27~29일</td><td>25</td><td>응급실 내원, 6월30 또는 7월1일 퇴원</td><td>환자</td></tr>
+<tr><td>172</td><td>여</td><td>61</td><td>6월 21일</td><td>퇴원</td><td>대전 대청병원</td><td>6월1일</td><td>20</td><td>간병인, 8월5일 퇴원</td><td>간병인</td></tr>
+<tr><td>173</td><td>여</td><td>70</td><td>6월 22일</td><td style="color:red;">사망</td><td>강동경희대병원</td><td>6월5일</td><td>17</td><td>76번 확진자가 있던 응급실 방문 환자의 보호자(요양보호사), 6월24일 사망</td><td>기타</td></tr>
+<tr><td>174</td><td>남</td><td>75</td><td>6월 22일</td><td>퇴원</td><td>조사중</td><td>6월4,8,9일</td><td></td><td>삼성서울병원 내원 환자(역학조사 진행중), 7월10일 퇴원</td><td>환자</td></tr>
+<tr><td>175</td><td>남</td><td>74</td><td>6월 22일</td><td>퇴원</td><td>조사중</td><td>자료없음</td><td></td><td>평택굿모닝병원에서 노출된 118번 확진자 가족(역학조사 진행중, 가족간 감염 추정) 7월13일 퇴원</td><td>가족</td></tr>
+<tr><td>176</td><td>남</td><td>51</td><td>6월 23일</td><td>퇴원</td><td>건국대병원</td><td>6월6일</td><td>17</td><td>76번 확진자와 같은 병동 입원, 7월16일 퇴원</td><td>환자</td></tr>
+<tr><td>177</td><td>여</td><td>50</td><td>6월 23일</td><td style="color:red;">사망</td><td>삼성서울병원</td><td>5월27~30일</td><td>27</td><td>14번 확진자와 같은 응급실 입원, 7월7일 사망</td><td>환자</td></tr>
+<tr><td>178</td><td>남</td><td>29</td><td>6월 23일</td><td>퇴원</td><td>조사중</td><td>자료없음</td><td></td><td>평택박애병원에 입원한 환자의 가족(역학조사 진행중), 6월30-7월2일 퇴원</td><td>가족</td></tr>
+<tr><td>179</td><td>여</td><td>54</td><td>6월 23일</td><td>퇴원</td><td>강릉의료원</td><td>자료없음</td><td></td><td>96, 97, 132번 확진자에 노출된 강릉의료원 간호사, 7월8 또는 9일 퇴원</td><td>의료진</td></tr>
+<tr><td>180</td><td>남</td><td>55</td><td>6월 24일</td><td>퇴원</td><td>좋은강안병원</td><td>6월8~12일</td><td>16</td><td>143번 확진자와 같은 병실 입원, 7월6일 퇴원</td><td>환자</td></tr>
+<tr><td>181</td><td>남</td><td>26</td><td>6월 25일</td><td>퇴원</td><td>삼성서울병원</td><td>6월11~15일</td><td>14</td><td>135번 확진자 의료진, 7월8 또는 9일 퇴원</td><td>의료진</td></tr>
+<tr><td>182</td><td>여</td><td>27</td><td>6월 26일</td><td>퇴원</td><td>강동경희대병원</td><td>6월6일</td><td></td><td>의료진(간호사)으로 응급실에서 76번 확진자 접촉, 7월4일 퇴원</td><td>의료진</td></tr>
+<tr><td>183</td><td>여</td><td>24</td><td>7월 1일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>의료진(간호사)으로 역학조사 진행중, 7월17일 퇴원</td><td>의료진</td></tr>
+<tr><td>184</td><td>여</td><td>24</td><td>7월 2일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>6월16-24일 확진자 중환자실에서 근무한 의료진(간호사)으로 역학조사 진행중, 7월10일 퇴원</td><td>의료진</td></tr>
+<tr><td>185</td><td>여</td><td>25</td><td>7월 3일</td><td>퇴원</td><td>삼성서울병원</td><td>자료없음</td><td></td><td>6월11~29일 확진자 중환자실에서 근무한 의료진(의사)으로, 역학조사 진행중, 7월15일 퇴원</td><td>의료진</td></tr>
+<tr><td>186</td><td>여</td><td>50</td><td>7월 4일</td><td>퇴원</td><td>조사중</td><td>자료없음</td><td></td><td>132번째 확진자의 부인이자 삼성서울병원 외래 환자로, 역학조사 진행중, 7월21일 퇴원(공식 자료에 언급 없음)</td><td>가족</td></tr>
+</tbody>
+</table>
+<p>자료: 한국 보건복지부의 공식 보도자료. 자료 추적 및 가공: <a href="http://plug.hani.co.kr/data">한겨레 데이터블로그 (http://plug.hani.co.kr/data)</a></p>
+<table style="border:1px solid black;border-collapse:collapse;width:50%;"><tr style="border:1px solid black;border-collapse:collapse;"><td colspan="5" style="text-align:center;"><strong>부정확한 신상 정보</strong></td></tr>
+<tr><td rowspan="2">16번 확진자</td><td>6월1일</td><td>7월3일</td><td></td><td rowspan="2" style="padding:15px;">정정 사실 명시안함</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>40살 남성</td><td>41살 남성</td><td></td></tr>
+<tr><td rowspan="2">46번 확진자</td><td>6월6일</td><td>6월9일</td><td>6월24일</td><td rowspan="2" style="padding:15px;">40살 -> 56살 정정 사실 명시</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>40살 남성</td><td>56살 남성</td><td>55살 남성</td></tr>
+<tr><td rowspan="2">75번 확진자</td><td>6월7일</td><td>6월23일</td><td>6월27일</td><td rowspan="2" style="padding:15px;">정정 사실 명시안함</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>63살 여성</td><td>63살 남성</td><td>62살 남성</td></tr>
+<tr><td rowspan="2">77번 확진자</td><td>6월14일</td><td>6월18일</td><td></td><td rowspan="2" style="padding:15px;">정정 사실 명시안함</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>63살 남성</td><td>64살 남성</td><td></td></tr>
+<tr><td rowspan="2">82번 확진자</td><td>6월14일</td><td>6월18일</td><td></td><td rowspan="2" style="padding:15px;">정정 사실 명시안함</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>83살 여성</td><td>82살 여성</td></td><td></tr>
+<tr><td rowspan="2">87번 확진자</td><td>6월23일</td><td>6월26일</td><td></td><td rowspan="2" style="padding:15px;">정정 사실 명시안함</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>78살 여성</td><td>79살 여성</td><td></td></tr>
+<tr><td rowspan="2">134번 확진자</td><td>6월12일</td><td>6월14일</td><td>6월21일</td><td rowspan="2" style="padding:15px;">남성 -> 여성 정정 사실 명시</td></tr>
+<tr style="border:1px solid black;border-collapse:collapse;"><td>68살 남성</td><td>67살 여성</td><td>68살 여성</td></tr>
+</table>
+<script>
+	$(document).ready(function() {
+    $('#table20').DataTable({
+    "columnDefs": [{"targets":[3], "orderable":false},{"targets":[6], "orderable":false},{"targets":[7], "orderable":false},{"targets":[8], "orderable":false}],
+    "order": [],
+    "Dom": '<"top"f>t<"bottom"p><"clear">',
+    "language": {
+    "sEmptyTable":     "자료가 없습니다",
+   "sInfo":           "",
+   "sInfoEmpty":      "0 - 0 / 0",
+   "sInfoFiltered":   "",
+   "sInfoPostFix":    "",
+   "sInfoThousands":  ",",
+   "sLengthMenu":     "",
+   "sLoadingRecords": "읽는 중...",
+   "sProcessing":     "처리 중...",
+   "sSearch":         "병원명, 사망 여부 등으로 찾기",
+   "sZeroRecords":    "검색 결과가 없습니다",
+   "oPaginate": {
+       "sFirst":    "처음",
+       "sLast":     "마지막",
+       "sNext":     "다음",
+       "sPrevious": "이전"
+   },
+   "oAria": {
+       "sSortAscending":  ": 오름차순 정렬",
+       "sSortDescending": ": 내림차순 정렬"
+   }
+    },
+    scrollY: '100vh',
+    scrollCollapse: true,
+    scrollX: true,
+    paging: true,
+    "lengthMenu": [10, 30]});
+} );
+	</script>
+</body>
+</html>
