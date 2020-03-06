@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="js/jquery.dataTables.min.css">
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/jquery.dataTables.min.js"></script>
+		<style>
+		body {font: 12px/1.5 "Nanum Gothic", "Nanum Gothic", sans-serif;}
+		.dataTables_wrapper .dataTables_filter {
+		float: left;
+		text-align: left}
+		.dataTables_wrapper .dataTables_paginate {
+		float: left;
+		text-align: left;
+		padding-top: 0.25em
+		}
+		a, a:link {text-decoration: none;}
+		</style>
+</head>
+
+<body>
+<p><strong>2020년 3월5일 기준 전국(대구·경북 제외) 코로나19 확진자 582명 명단</strong></p>
+<div style="text-align:left;">출처: 각 시도 공식 홈페이지, 일부 시군구 보도자료
+<br />정리: <a href="http://plug.hani.co.kr/data" target="_blank">한겨레 데이터 블로그 (http://plug.hani.co.kr/data)</a></div>
+<table id="table20" class="display" cellspacing="0" width="100%">
+<th>정렬용<br />일련번호</th><th>전국<br />환자번호</th><th>시도별<br />환자번호</th><th>확진일</th><th>최초 증상<br />발현 날짜</th><th>나이</th><th>성별</th><th>거주지</th><th>격리시설</th><th>접촉자 수</th><th>접촉 경로</th><th>증상</th></thead>
+<tbody>
+<tr><td>1</td><td>6070</td><td>서울-105</td><td>3월4일</td><td></td><td>17</td><td>여</td><td>강북구</td><td>서남병원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>2</td><td></td><td>서울-104</td><td>3월4일</td><td></td><td>36</td><td>남</td><td>강북구</td><td>서남병원</td><td></td><td>타 시도 확진자 접촉</td><td></td></tr>
+<tr><td>3</td><td>5695</td><td>서울-103</td><td>3월4일</td><td></td><td>23</td><td>남</td><td>동대문구</td><td>서북병원</td><td></td><td>해외 접촉 (이탈리아, 독일, 홍콩 방문)</td><td></td></tr>
+<tr><td>4</td><td>5666</td><td>서울-102</td><td>3월4일</td><td></td><td>49</td><td>여</td><td>용산구</td><td>순천향서울병원</td><td></td><td>성동구 주상복합 관련</td><td></td></tr>
+<tr><td>5</td><td>5661</td><td>서울-101</td><td>3월4일</td><td></td><td>15</td><td>여</td><td>중랑구</td><td>서울의료원</td><td></td><td>타 시도 확진자(이모) 접촉</td><td></td></tr>
+<tr><td>6</td><td>5592</td><td>서울-100</td><td>3월3일</td><td></td><td>35</td><td>남</td><td>동대문구</td><td>서북병원</td><td></td><td></td><td></td></tr>
+<tr><td>7</td><td>5377</td><td>서울-99</td><td>3월1일</td><td>2월29일</td><td>24</td><td>여</td><td>동대문구</td><td>서북병원</td><td></td><td>대구 방문 (중국인)</td><td></td></tr>
+<tr><td>8</td><td>4743</td><td>서울-98</td><td>3월2일</td><td></td><td>54</td><td>남</td><td>서초구</td><td>서울의료원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>9</td><td>4709</td><td>서울-97</td><td>3월1일</td><td></td><td>35</td><td>남</td><td>양천구</td><td>서울의료원</td><td></td><td>전남 순천시 확진자 접촉</td><td></td></tr>
+<tr><td>10</td><td>4645</td><td>서울-96</td><td>3월2일</td><td>3월1일</td><td>38</td><td>남</td><td>도봉구</td><td>서울의료원</td><td></td><td>확인중 (직장 동료 중 확진자 있음)</td><td>발열, 두통</td></tr>
+<tr><td>11</td><td>4634</td><td>서울-95</td><td>3월2일</td><td></td><td>21</td><td>여</td><td>성북구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련</td><td></td></tr>
+<tr><td>12</td><td>4558</td><td>서울-94</td><td>3월2일</td><td></td><td>51</td><td>여</td><td>성북구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 전국 3797번(서울-89번) 확진자 가족</td><td></td></tr>
+<tr><td>13</td><td>4517</td><td>서울-93</td><td>3월2일</td><td></td><td>51</td><td>여</td><td>강남구</td><td>서울의료원</td><td></td><td>부동산중개법인 관련</td><td></td></tr>
+<tr><td>14</td><td>4224</td><td>서울-92</td><td>3월2일</td><td>2월26일</td><td>20</td><td>남</td><td>영등포구</td><td>서북병원</td><td></td><td>성동구 주상복합 관련</td><td>발열, 두통</td></tr>
+<tr><td>15</td><td>4174</td><td>서울-91</td><td>2월29일</td><td>2월21일</td><td>48</td><td>남</td><td>영등포구</td><td>서울의료원</td><td></td><td>여의도 건설현장관련</td><td>오한, 근육통</td></tr>
+<tr><td>16</td><td>3815</td><td>서울-90</td><td>3월1일</td><td></td><td>51</td><td>남</td><td>영등포구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련</td><td></td></tr>
+<tr><td>17</td><td>3797</td><td>서울-89</td><td>3월1일</td><td></td><td>50</td><td>남</td><td>성북구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 전국 3261번(서울-78번) 확진자가 직장 동료</td><td></td></tr>
+<tr><td>18</td><td>3790</td><td>서울-88</td><td>3월1일</td><td></td><td>45</td><td>남</td><td>광진구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 전국 3261(서울-78번) 확진자 접촉</td><td></td></tr>
+<tr><td>19</td><td>3703</td><td>서울-87</td><td>2월28일</td><td>2월24일</td><td>15</td><td>남</td><td>노원구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련</td><td>인후통, 콧물</td></tr>
+<tr><td>20</td><td>3616</td><td>서울-86</td><td>3월1일</td><td></td><td>35</td><td>여</td><td>강남구</td><td>서울의료원</td><td></td><td>부동산 중개 법인관련</td><td></td></tr>
+<tr><td>21</td><td>3684</td><td>서울-85</td><td>2월29일</td><td></td><td>32</td><td>여</td><td>강남구</td><td>국립중앙의료원</td><td></td><td>해외 접촉 (이탈리아 방문)</td><td></td></tr>
+<tr><td>22</td><td>3680</td><td>서울-84</td><td>2월27일</td><td>2월25일</td><td>23</td><td>여</td><td>송파구</td><td>서울의료원</td><td></td><td>대구 확진자(전국 3679번)와 접촉한 어머니 만남</td><td>인후통, 기침, 가래, 오한</td></tr>
+<tr><td>23</td><td>3679</td><td>서울-83</td><td>2월27일</td><td>2월24일</td><td>27</td><td>여</td><td>송파구</td><td>서울의료원</td><td></td><td>대구 확진자(어머니) 접촉</td><td>미열, 가슴통증, 근육통</td></tr>
+<tr><td>24</td><td>3517</td><td>서울-82</td><td>2월29일</td><td>2월18일</td><td>69</td><td>남</td><td>영등포구</td><td>서울의료원</td><td></td><td>해외 접촉 (일본 방문)</td><td>발열, 몸살</td></tr>
+<tr><td>25</td><td>3491</td><td>서울-81</td><td>2월29일</td><td>2월27일</td><td>24</td><td>여</td><td>관악구</td><td>서울의료원</td><td></td><td>대구 확진자 접촉</td><td>목 따끔거림, 코 간지러움</td></tr>
+<tr><td>26</td><td>3263</td><td>서울-80</td><td>2월29일</td><td>2월26일</td><td>24</td><td>여</td><td>노원구</td><td>서울의료원</td><td></td><td>타 시도 확진자 접촉</td><td>근육통, 두통, 기침</td></tr>
+<tr><td>27</td><td>3262</td><td>서울-79</td><td>2월28일</td><td>2월20일</td><td>17</td><td>여</td><td>노원구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련</td><td>인후통, 콧물</td></tr>
+<tr><td>28</td><td>3261</td><td>서울-78</td><td>2월25일</td><td></td><td>46</td><td>남</td><td>노원구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 전국 121번(서울-20번) 확진자와 직장에서 접촉</td><td></td></tr>
+<tr><td>29</td><td>3046</td><td>서울-77</td><td>2월28일</td><td>2월26일</td><td>29</td><td>여</td><td>성동구</td><td>순천향서울병원</td><td></td><td>전국 2025번(대전-13번) 확진자 접촉</td><td>발열</td></tr>
+<tr><td>30</td><td>3054</td><td>서울-76</td><td>2월27일</td><td>2월26일</td><td>43</td><td>남</td><td>동대문구</td><td>인제대상계백병원</td><td></td><td>타 시도 확진자 접촉</td><td>미열, 몸살</td></tr>
+<tr><td>31</td><td>3007</td><td>서울-75</td><td>2월27일</td><td></td><td>38</td><td>남</td><td>광진구</td><td>서울의료원</td><td></td><td>해외 접촉 (이탈리아, 프랑스 방문)</td><td></td></tr>
+<tr><td>32</td><td>2858</td><td>서울-74</td><td>2월27일</td><td></td><td>54</td><td>남</td><td>서초구</td><td>한양대학교병원 퇴원</td><td></td><td>확인중 (대구 지점 직원과 사무실에서 접촉)</td><td></td></tr>
+<tr><td>33</td><td>2840</td><td>서울-73</td><td>2월27일</td><td>2월21일</td><td>45</td><td>남</td><td>인천</td><td>서울의료원</td><td></td><td>여의도 건설현장 관련</td><td>발열, 근육통</td></tr>
+<tr><td>34</td><td>2833</td><td>서울-72</td><td>2월27일</td><td></td><td>41</td><td>여</td><td>강동구</td><td>서울의료원 퇴원</td><td></td><td>명성교회 관련, 전국 938번(서울-41번) 확진자와 엘리베이터 탑승</td><td></td></tr>
+<tr><td>35</td><td>2818</td><td>서울-71</td><td>2월26일</td><td></td><td>30</td><td>여</td><td>노원구</td><td>인제대상계백병원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>36</td><td>2740</td><td>서울-70</td><td>2월27일</td><td></td><td>45</td><td>여</td><td>노원구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 남편이 직장에서 전국 121번(서울-20번) 확진자 접촉</td><td></td></tr>
+<tr><td>37</td><td>2666</td><td>서울-69</td><td>2월25일</td><td></td><td>46</td><td>남</td><td>노원구</td><td>서울대학교병원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>38</td><td>2621</td><td>서울-68</td><td>2월27일</td><td></td><td>28</td><td>여</td><td>강남구</td><td>국립중앙의료원</td><td></td><td>확인중, 친구 2명 2월27-28일 확진 판정</td><td></td></tr>
+<tr><td>39</td><td>2471</td><td>서울-67</td><td>2월27일</td><td></td><td>21</td><td>여</td><td>송파구</td><td>한양대학교병원</td><td></td><td>전국 794번(서울-33번) 확진자 접촉 추정</td><td></td></tr>
+<tr><td>40</td><td>2470</td><td>서울-66</td><td>2월28일</td><td></td><td>34</td><td>남</td><td>강남구</td><td>서울의료원 퇴원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>41</td><td>2469</td><td>서울-65</td><td>2월27일</td><td></td><td>28</td><td>여</td><td>강남구</td><td>상계백병원</td><td></td><td>전국 2621번(서울-68번) 확진자 접촉</td><td></td></tr>
+<tr><td>42</td><td>2468</td><td>서울-64</td><td>2월27일</td><td>2월26일</td><td>65</td><td>남</td><td>강남구</td><td>서울의료원 퇴원</td><td></td><td>전국 1247번(서울-47번)  확진자 접촉 추정</td><td>마른 기침</td></tr>
+<tr><td>43</td><td>2466</td><td>서울-63</td><td>2월27일</td><td></td><td>45</td><td>남</td><td>관악구</td><td>서울의료원 퇴원</td><td></td><td>부동산 중개업 관련</td><td></td></tr>
+<tr><td>44</td><td>1907</td><td>서울-62</td><td>2월27일</td><td></td><td>43</td><td>남</td><td>서대문구</td><td>서울의료원</td><td></td><td>쇼핑몰 관련, 전국 1177번 확진자인 직장 동료와 접촉</td><td></td></tr>
+<tr><td>45</td><td>1788</td><td>서울-61</td><td>2월26일</td><td>2월26일</td><td>30</td><td>여</td><td>서대문구</td><td>국립중앙의료원</td><td></td><td>은평성모병원 관련, 전국 161번(서울-22번) 확진자의 아버지</td><td>발열</td></tr>
+<tr><td>46</td><td>1768</td><td>서울-60</td><td>2월26일</td><td></td><td>66</td><td>여</td><td>은평구</td><td>보라매병원</td><td></td><td>은평성모병원 관련, 전국 1532번(서울-54번) 확진자의 배우자</td><td></td></tr>
+<tr><td>47</td><td>1767</td><td>서울-59</td><td>2월26일</td><td></td><td>85</td><td>남</td><td>은평구</td><td>고대구로병원</td><td></td><td>은평성모병원 관련, 전국 1768번(서울-60번) 확진자 요양사</td><td></td></tr>
+<tr><td>48</td><td>1710</td><td>서울-58</td><td>2월26일</td><td></td><td>30</td><td>남</td><td>강남구</td><td>서남병원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>49</td><td>1675</td><td>서울-57</td><td>2월25일</td><td></td><td>46</td><td>남</td><td>경기 고양</td><td>타 시도 이관</td><td></td><td>은평성모병원 관련 검토</td><td></td></tr>
+<tr><td>50</td><td>1611</td><td>서울-56</td><td>2월25일</td><td></td><td>58</td><td>남</td><td>경기 고양</td><td>보라매병원</td><td></td><td>확인중 (대구 방문 추정)</td><td></td></tr>
+<tr><td>51</td><td>1567</td><td>서울-55</td><td>2월26일</td><td></td><td>27</td><td>여</td><td>양천구</td><td>서울대학교병원 퇴원</td><td></td><td>은평성모병원 관련</td><td></td></tr>
+<tr><td>52</td><td>1532</td><td>서울-54</td><td>2월26일</td><td></td><td>83</td><td>여</td><td>은평구</td><td>보라매병원</td><td></td><td>은평성모병원 관련</td><td></td></tr>
+<tr><td>53</td><td>1531</td><td>서울-53</td><td>2월26일</td><td></td><td>47</td><td>여</td><td>은평구</td><td>고대구로병원</td><td></td><td>은평성모병원 관련, 이 병원에서 시어머니 간호함</td><td></td></tr>
+<tr><td>54</td><td>1378</td><td>서울-52</td><td>2월25일</td><td></td><td>36</td><td>남</td><td>송파구</td><td>보라매병원 퇴원</td><td></td><td>해외 접촉 (타이 방문)</td><td></td></tr>
+<tr><td>55</td><td>1370</td><td>서울-51</td><td>2월25일</td><td></td><td>28</td><td>여</td><td>송파구</td><td>보라매병원 퇴원</td><td></td><td>경찰병원 관련</td><td></td></tr>
+<tr><td>56</td><td>1295</td><td>서울-50</td><td>2월26일</td><td>2월24일</td><td>26</td><td>남</td><td>관악구</td><td>서울백병원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>57</td><td>1254</td><td>서울-49</td><td>2월25일</td><td></td><td>64</td><td>남</td><td>은평구</td><td>삼육서울병원</td><td></td><td>은평성모병원 관련</td><td></td></tr>
+<tr><td>58</td><td>1253</td><td>서울-48</td><td>2월25일</td><td></td><td>25</td><td>여</td><td>은평구</td><td>보라매병원</td><td></td><td>서울재생병원 관련</td><td></td></tr>
+<tr><td>59</td><td>1247</td><td>서울-47</td><td>2월26일</td><td></td><td>27</td><td>남</td><td>강남구</td><td>서남병원</td><td></td><td>신천지 대구교회 예배 참석</td><td></td></tr>
+<tr><td>60</td><td>1246</td><td>서울-46</td><td>2월25일</td><td></td><td>21</td><td>여</td><td>경상북도</td><td>중앙대학교병원 퇴원</td><td></td><td>명성교회 관련</td><td></td></tr>
+<tr><td>61</td><td>1118</td><td>서울-45</td><td>2월25일</td><td></td><td>41</td><td>남</td><td>송파구</td><td>국립중앙의료원 퇴원</td><td></td><td>전국 794번(서울-33번)  확진자 접촉</td><td></td></tr>
+<tr><td>62</td><td>1027</td><td>서울-44</td><td>2월25일</td><td></td><td>62</td><td>남</td><td>동작구</td><td>보라매병원</td><td></td><td>대구 확진자 접촉</td><td></td></tr>
+<tr><td>63</td><td>1022</td><td>서울-43</td><td>2월25일</td><td></td><td>25</td><td>여</td><td>송파구</td><td>서남병원</td><td></td><td>해외 접촉 추정</td><td></td></tr>
+<tr><td>64</td><td>996</td><td>서울-42</td><td>2월25일</td><td></td><td>43</td><td>남</td><td>노원구</td><td>보라매병원</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>65</td><td>938</td><td>서울-41</td><td>2월25일</td><td></td><td>52</td><td>남</td><td>강동구</td><td>한일병원 퇴원</td><td></td><td>경북 청도 대남병원 장례식장 방문한 명성교회 인사</td><td></td></tr>
+<tr><td>66</td><td>935</td><td>서울-40</td><td>2월25일</td><td>2월24일</td><td>60</td><td>여</td><td>관악구</td><td>삼육서울병원</td><td></td><td>확인중, 전국 372번, 573번 확진자 접촉</td><td></td></tr>
+<tr><td>67</td><td>924</td><td>서울-39</td><td>2월25일</td><td></td><td>75</td><td>여</td><td>금천구</td><td>국립중앙의료원 퇴원</td><td></td><td>해외 접촉 (중국 청도 방문 중국인)</td><td></td></tr>
+<tr><td>68</td><td>907</td><td>서울-38</td><td>2월25일</td><td></td><td>67</td><td>남</td><td>경기 평택</td><td>타 시도 이관</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>69</td><td>887</td><td>서울-37</td><td>2월24일</td><td></td><td>44</td><td>여</td><td>송파구</td><td>중앙대학교병원</td><td></td><td>전국 780번(서울-31번)  확진자 접촉</td><td></td></tr>
+<tr><td>70</td><td>870</td><td>서울-36</td><td>2월24일</td><td></td><td>57</td><td>여</td><td>은평구</td><td>한일병원</td><td></td><td>은평성모병원 관련, 남편 병 간호를 위해 병원 방문</td><td></td></tr>
+<tr><td>71</td><td>847</td><td>서울-35</td><td>2월25일</td><td>2월19일</td><td>36</td><td>남</td><td>경기 김포</td><td>타 시도 이관</td><td></td><td>확인중</td><td></td></tr>
+<tr><td>72</td><td>797</td><td>서울-34</td><td>2월24일</td><td></td><td>20</td><td>남</td><td>송파구</td><td>서울의료원</td><td></td><td>전국 780번(서울-31번) 확진자 아들</td><td></td></tr>
+<tr><td>73</td><td>794</td><td>서울-33</td><td>2월24일</td><td></td><td>50</td><td>여</td><td>송파구</td><td>서울의료원</td><td></td><td>전국 780번(서울-31번)  확진자 부인</td><td></td></tr>
+<tr><td>74</td><td>787</td><td>서울-32</td><td>2월23일</td><td></td><td>58</td><td>남</td><td>서초구</td><td>서울의료원</td><td></td><td>가족이 부산 신천지 확진자 접촉 추정</td><td></td></tr>
+<tr><td>75</td><td>780</td><td>서울-31</td><td>2월22일</td><td></td><td>55</td><td>남</td><td>송파구</td><td>중앙대학교병원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>76</td><td>755</td><td>서울-30</td><td>2월23일</td><td></td><td>66</td><td>남</td><td>강동구</td><td>중앙대학교병원</td><td></td><td>은평성모병원 관련 (중국인), 전국 627번(서울-28번) 확진자 가족</td><td></td></tr>
+<tr><td>77</td><td>754</td><td>서울-29</td><td>2월26일</td><td></td><td>75</td><td>남</td><td>종로구</td><td>한일병원</td><td></td><td>은평성모병원 관련, 전국 627번(서울-28번) 확진자의 가족</td><td></td></tr>
+<tr><td>78</td><td>627</td><td>서울-28</td><td>2월23일</td><td></td><td>70</td><td>여</td><td>종로구</td><td>서울대학교병원</td><td></td><td>은평성모병원 관련,  전국 754번(서울-29번) 확진자의 가족</td><td></td></tr>
+<tr><td>79</td><td>593</td><td>서울-27</td><td>2월23일</td><td></td><td>52</td><td>남</td><td>강서구</td><td>서울의료원 퇴원</td><td></td><td>해외 접촉 (베트남 방문)</td><td></td></tr>
+<tr><td>80</td><td>420</td><td>서울-26</td><td>2월22일</td><td>2월21일</td><td>344</td><td>남</td><td>서초구</td><td>서울의료원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>81</td><td>365</td><td>서울-25</td><td>2월22일</td><td></td><td>62</td><td>남</td><td>강동구</td><td>서울대학교병원</td><td></td><td>은평성모병원 관련</td><td></td></tr>
+<tr><td>82</td><td>348</td><td>서울-24</td><td>2월22일</td><td></td><td>40</td><td>남</td><td>구로구</td><td>국립중앙의료원</td><td></td><td>타 시도 확진자 접촉</td><td></td></tr>
+<tr><td>83</td><td>188</td><td>서울-23</td><td>2월21일</td><td></td><td>59</td><td>남</td><td>서초구</td><td>국립중앙의료원</td><td></td><td>신천지 대구교회 관련</td><td></td></tr>
+<tr><td>84</td><td>161</td><td>서울-22</td><td>2월21일</td><td></td><td>35</td><td>남</td><td>서대문구</td><td>국립중앙의료원</td><td></td><td>은평성모병원 관련</td><td></td></tr>
+<tr><td>85</td><td>136</td><td>서울-21</td><td>2월20일</td><td></td><td>84</td><td>남</td><td>종로구</td><td>서울대학교병원</td><td></td><td>전국 56번(서울-16번) 확진자 접촉</td><td></td></tr>
+<tr><td>86</td><td>121</td><td>서울-20</td><td>2월20일</td><td></td><td>76</td><td>여</td><td>성동구</td><td>서울의료원</td><td></td><td>성동구 주상복합 관련, 전국 40번(서울-15번) 확진자의 가족</td><td></td></tr>
+<tr><td>87</td><td>112</td><td>서울-19</td><td>2월20일</td><td></td><td>79</td><td>여</td><td>종로구</td><td>서울대학교병원</td><td></td><td>전국 136번(서울-21번) 확진자 가족</td><td></td></tr>
+<tr><td>88</td><td>111</td><td>서울-18</td><td>2월20일</td><td></td><td>20</td><td>남</td><td>대구광역시</td><td>국립중앙의료원</td><td></td><td>대구 거주자</td><td></td></tr>
+<tr><td>89</td><td>83</td><td>서울-17</td><td>2월20일</td><td></td><td>76</td><td>남</td><td>종로구</td><td>국립중앙의료원 퇴원</td><td></td><td>전국 6번(서울-3번) 확진자 접촉 추정</td><td></td></tr>
+<tr><td>90</td><td>56</td><td>서울-16</td><td>2월19일</td><td></td><td>75</td><td>남</td><td>종로구</td><td>서울의료원</td><td></td><td>전국 30번(서울-14번) 확진자 접촉 추정</td><td></td></tr>
+<tr><td>91</td><td>40</td><td>서울-15</td><td>2월19일</td><td>2월11일</td><td>77</td><td>남</td><td>성동구</td><td>국립중앙의료원</td><td></td><td>성동구 주상복합 관련</td><td>기침</td></tr>
+<tr><td>92</td><td>30</td><td>서울-14</td><td>2월16일</td><td>2월6일</td><td>68</td><td>여</td><td>종로구</td><td>서울대학교병원</td><td></td><td>전국 29번(서울-13번) 확진자 접촉</td><td>기침, 오한, 근육통</td></tr>
+<tr><td>93</td><td>29</td><td>서울-13</td><td>2월16일</td><td>2월15일</td><td>82</td><td>남</td><td>종로구</td><td>서울대학교병원</td><td></td><td>전국 83번(서울-17번) 확진자 접촉</td><td>흉부 불편감</td></tr>
+<tr><td>94</td><td>24</td><td>서울-12</td><td>2월7일</td><td></td><td>28</td><td>남</td><td>충남 아산</td><td>국립중앙의료원 퇴원</td><td></td><td>해외 접촉 (중국 우한 교민)</td><td>인후통</td></tr>
+<tr><td>95</td><td>23</td><td>서울-11</td><td>2월6일</td><td></td><td>58</td><td>여</td><td>서대문구</td><td>국립중앙의료원 퇴원</td><td></td><td>해외 접촉 (중국 우한 방문 중국인)</td><td></td></tr>
+<tr><td>96</td><td>21</td><td>서울-10</td><td>2월5일</td><td></td><td>60</td><td>여</td><td>성북구</td><td>서울대학교병원 퇴원</td><td></td><td>전국 6번(서울-3번)  확진자 접촉</td><td></td></tr>
+<tr><td>97</td><td>19</td><td>서울-9</td><td>2월5일</td><td></td><td>37</td><td>남</td><td>송파구</td><td>서울의료원 퇴원</td><td></td><td>해외 접촉 (싱가포르 방문)</td><td></td></tr>
+<tr><td>98</td><td>13</td><td>서울-8</td><td>2월2일</td><td></td><td>28</td><td>남</td><td>인천광역시</td><td>국립중앙의료원 퇴원</td><td></td><td>해외 접촉 (우한 교민)</td><td></td></tr>
+<tr><td>99</td><td>11</td><td>서울-7</td><td>1월31일</td><td></td><td>25</td><td>남</td><td>종로구</td><td>서울대학교병원 퇴원</td><td></td><td>전국 6번(서울-3번)  확진자 접촉</td><td></td></tr>
+<tr><td>100</td><td>10</td><td>서울-6</td><td>1월31일</td><td></td><td>54</td><td>여</td><td>종로구</td><td>서울대학교병원 퇴원</td><td></td><td>전국 6번(서울-3번)  확진자 접촉</td><td></td></tr>
+<tr><td>101</td><td>9</td><td>서울-5</td><td>1월31일</td><td></td><td>28</td><td>여</td><td>성북구</td><td>서울의료원 퇴원</td><td></td><td>전국 5번(서울-2번)  확진자 접촉</td><td></td></tr>
+<tr><td>102</td><td>7</td><td>서울-4</td><td>1월30일</td><td>1월26일</td><td>29</td><td>남</td><td>마포구</td><td>서울의료원 퇴원</td><td></td><td>해외 접촉 (중국 우한 방문)</td><td></td></tr>
+<tr><td>103</td><td>6</td><td>서울-3</td><td>1월30일</td><td></td><td>56</td><td>남</td><td>종로구</td><td>서울대학교병원 퇴원</td><td></td><td>전국 3번  확진자 접촉</td><td></td></tr>
+<tr><td>104</td><td>5</td><td>서울-2</td><td>1월30일</td><td></td><td>33</td><td>남</td><td>중랑구</td><td>서울의료원 퇴원</td><td></td><td>해외 접촉 (중국 우한 방문)</td><td>무증상</td></tr>
+<tr><td>105</td><td>2</td><td>서울-1</td><td>1월23일</td><td>1월22일</td><td>56</td><td>남</td><td>강서구</td><td>국립중앙의료원 퇴원</td><td></td><td>해외 접촉 (중국 우한 방문)</td><td>발열</td></tr>
+<tr><td>106</td><td></td><td>부산-85</td><td>3월5일</td><td>3월2일</td><td>40</td><td>여</td><td>연제구</td><td>부산의료원</td><td>1</td><td></td><td>코막힘</td></tr>
+<tr><td>107</td><td></td><td>부산-84</td><td>3월4일</td><td></td><td>25</td><td>남</td><td>수영구</td><td>부산의료원</td><td>5</td><td>신천지 교인</td><td>무증상</td></tr>
+<tr><td>108</td><td></td><td>부산-83</td><td>3월3일</td><td>2월27일</td><td>17</td><td>남</td><td>부산진구</td><td>부산의료원</td><td>3</td><td>확진자 접촉</td><td>기침, 가래</td></tr>
+<tr><td>109</td><td></td><td>부산-82</td><td>3월3일</td><td>2월28일</td><td>19</td><td>남</td><td>동래구</td><td>부산의료원</td><td>2</td><td>확진자 접촉</td><td>발열, 인후통</td></tr>
+<tr><td>110</td><td></td><td>부산-81</td><td>3월3일</td><td>3월1일</td><td>36</td><td>여</td><td>서구</td><td>부산의료원</td><td>1</td><td>확진자 접촉</td><td>기침</td></tr>
+<tr><td>111</td><td></td><td>부산-80</td><td>3월2일</td><td>2월28일</td><td>68</td><td>남</td><td>수영구</td><td>부산의료원</td><td></td><td>온천교회 관련자</td><td>근육통</td></tr>
+<tr><td>112</td><td></td><td>부산-79</td><td>3월1일</td><td></td><td>5</td><td>남</td><td>사하구</td><td>부산의료원</td><td></td><td>확진자 접촉</td><td>무증상</td></tr>
+<tr><td>113</td><td></td><td>부산-78</td><td>3월1일</td><td>2월22일</td><td>62</td><td>여</td><td>서구</td><td>동아대병원</td><td></td><td>대구 방문</td><td>콧물</td></tr>
+<tr><td>114</td><td></td><td>부산-77</td><td>3월1일</td><td>2월23일</td><td>74</td><td>남</td><td>대구광역시</td><td>부산의료원</td><td>3</td><td>대구가 자택</td><td>발열, 전신 통증</td></tr>
+<tr><td>115</td><td></td><td>부산-76</td><td>2월29일</td><td>2월23일</td><td>38</td><td>여</td><td>사하구</td><td>부산의료원</td><td>3</td><td>신천지 교인</td><td>기침, 코막힘</td></tr>
+<tr><td>116</td><td></td><td>부산-75</td><td>2월29일</td><td>2월27일</td><td>57</td><td>남</td><td>부산진구</td><td>해운대백병원</td><td>38</td><td>대구 방문</td><td>기침</td></tr>
+<tr><td>117</td><td></td><td>부산-74</td><td>2월29일</td><td></td><td>81</td><td>남</td><td>서구</td><td>부산대병원</td><td>6</td><td></td><td></td></tr>
+<tr><td>118</td><td></td><td>부산-73</td><td>2월29일</td><td>2월24일</td><td>56</td><td>남</td><td>해운대구</td><td>부산의료원</td><td>1</td><td>대구 방문</td><td>마른 기침</td></tr>
+<tr><td>119</td><td></td><td>부산-72</td><td>2월29일</td><td></td><td>7</td><td>남</td><td>수영구</td><td>부산의료원</td><td>8</td><td>확진자 접촉</td><td></td></tr>
+<tr><td>120</td><td></td><td>부산-71</td><td>2월28일</td><td>2월28일</td><td>79</td><td>남</td><td>부산진구</td><td>고신대복음병원</td><td>3</td><td></td><td>기침, 가래, 오한, 근육통</td></tr>
+<tr><td>121</td><td></td><td>부산-70</td><td>2월28일</td><td>2월26일</td><td>18</td><td>여</td><td>연제구</td><td>부산의료원</td><td>3</td><td>확진자 접촉</td><td>근육통, 두통</td></tr>
+<tr><td>122</td><td></td><td>부산-69</td><td>2월28일</td><td>2월21일</td><td>41</td><td>여</td><td>동래구</td><td>부산의료원</td><td></td><td>대구 거주자</td><td>몸살 기운</td></tr>
+<tr><td>123</td><td></td><td>부산-68</td><td>2월28일</td><td></td><td>29</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>2</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>124</td><td></td><td>부산-67</td><td>2월28일</td><td></td><td>65</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>2</td><td>확진자 접촉</td><td></td></tr>
+<tr><td>125</td><td></td><td>부산-66</td><td>2월27일</td><td>2월21일</td><td>8</td><td>여</td><td>동래구</td><td>부산의료원</td><td>5</td><td>대구에서 부산 방문</td><td>코막힘</td></tr>
+<tr><td>126</td><td></td><td>부산-65</td><td>2월27일</td><td>2월27일</td><td>25</td><td>남</td><td>수영구</td><td>부산의료원</td><td>1</td><td>부산-59번 확진자의 친구</td><td>코막힘</td></tr>
+<tr><td>127</td><td></td><td>부산-64</td><td>2월27일</td><td>2월26일</td><td>49</td><td>여</td><td>동래구</td><td>부산의료원</td><td>3</td><td>부산-10번 온천교회 확진자의 가족</td><td>발열, 기침</td></tr>
+<tr><td>128</td><td></td><td>부산-63</td><td>2월27일</td><td>2월28일</td><td>31</td><td>여</td><td>북구</td><td>부산의료원</td><td></td><td>부산-58번 확진자의 동료</td><td>발열, 콧물</td></tr>
+<tr><td>129</td><td></td><td>부산-62</td><td>2월27일</td><td>2월26일</td><td>16</td><td>남</td><td>동래구</td><td>부산의료원</td><td>3</td><td>부산-15번 온천교회 확진자 접촉</td><td>발열, 두통</td></tr>
+<tr><td>130</td><td></td><td>부산-61</td><td>2월27일</td><td>2월22일</td><td>44</td><td>여</td><td>해운대구</td><td>해운대백병원</td><td>10</td><td>부산-58번 59번 확진자의 동료</td><td>발열</td></tr>
+<tr><td>131</td><td></td><td>부산-60</td><td>2월26일</td><td></td><td>65</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>2</td><td>부산-57번 확진자 접촉</td><td></td></tr>
+<tr><td>132</td><td></td><td>부산-59</td><td>2월26일</td><td>2월21일</td><td>25</td><td>여</td><td>수영구</td><td>부산의료원</td><td>71</td><td>대구 방문</td><td>발열, 기침</td></tr>
+<tr><td>133</td><td></td><td>부산-58</td><td>2월26일</td><td>2월22일</td><td>51</td><td>여</td><td>수영구</td><td>해운대백병원</td><td>11</td><td>부산-59번 확진자 접촉</td><td>기침</td></tr>
+<tr><td>134</td><td></td><td>부산-57</td><td>2월26일</td><td></td><td>25</td><td>남</td><td>해운대구</td><td>부산의료원</td><td>18</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>135</td><td></td><td>부산-56</td><td>2월26일</td><td>2월23일</td><td>52</td><td>여</td><td>부산진구</td><td>부산의료원 퇴원</td><td>4</td><td>확진자 접촉</td><td>발열, 설사, 복통</td></tr>
+<tr><td>136</td><td></td><td>부산-55</td><td>2월25일</td><td></td><td>58</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>2</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>137</td><td></td><td>부산-54</td><td>2월25일</td><td>2월23일</td><td>27</td><td>남</td><td>부산진구</td><td>부산의료원</td><td>43</td><td>부산-36번 확진자 접촉</td><td>인후통, 코막힘, 마른 기침</td></tr>
+<tr><td>138</td><td></td><td>부산-53</td><td>2월25일</td><td>2월19일</td><td>28</td><td>여</td><td>사상구</td><td>부산의료원</td><td>30</td><td>대구 방문</td><td>두통, 발열</td></tr>
+<tr><td>139</td><td></td><td>부산-52</td><td>2월25일</td><td>2월21일</td><td>70</td><td>남</td><td>사하구</td><td>부산의료원</td><td>4</td><td>부산-40번 확진자 접촉</td><td>두통</td></tr>
+<tr><td>140</td><td></td><td>부산-51</td><td>2월25일</td><td></td><td>64</td><td>여</td><td>연제구</td><td>부산의료원 퇴원</td><td>0</td><td>확진자 접촉</td><td></td></tr>
+<tr><td>141</td><td></td><td>부산-50</td><td>2월25일</td><td>2월19일</td><td>36</td><td>여</td><td>북구</td><td>부산대병원 퇴원</td><td>11</td><td>기타</td><td>인후통</td></tr>
+<tr><td>142</td><td></td><td>부산-49</td><td>2월25일</td><td>2월23일</td><td>38</td><td>여</td><td>금정구</td><td>부산의료원 퇴원</td><td>2</td><td>온천교회 관계자</td><td>가래, 근육통</td></tr>
+<tr><td>143</td><td></td><td>부산-48</td><td>2월25일</td><td></td><td>79</td><td>남</td><td>동래구</td><td>부산의료원</td><td>1</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>144</td><td></td><td>부산-47</td><td>2월25일</td><td></td><td>48</td><td>남</td><td>동래구</td><td>고신대학교 복음병원 퇴원</td><td>10</td><td>기타</td><td></td></tr>
+<tr><td>145</td><td></td><td>부산-46</td><td>2월25일</td><td></td><td>73</td><td>남</td><td>동래구</td><td>부산의료원</td><td>26</td><td>부산-45번 확진자 접촉</td><td></td></tr>
+<tr><td>146</td><td></td><td>부산-45</td><td>2월25일</td><td></td><td>66</td><td>여</td><td>동래구</td><td>부산의료원</td><td></td><td>대전 확진자 접촉</td><td>기침, 오한, 인후통</td></tr>
+<tr><td>147</td><td></td><td>부산-44</td><td>2월24일</td><td></td><td>48</td><td>여</td><td>동래구</td><td>부산의료원</td><td></td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>148</td><td></td><td>부산-43</td><td>2월24일</td><td>2월21일</td><td>51</td><td>여</td><td>동래구</td><td>부산의료원</td><td>7</td><td>부산-29번 확진자 접촉</td><td>몸살 기운</td></tr>
+<tr><td>149</td><td></td><td>부산-42</td><td>2월24일</td><td>2월24일</td><td>19</td><td>남</td><td>동래구</td><td>부산의료원</td><td>2</td><td>부산-29번 확진자 가족</td><td>기침</td></tr>
+<tr><td>150</td><td></td><td>부산-41</td><td>2월24일</td><td>2월23일</td><td>27</td><td>남</td><td>동래구</td><td>부산의료원</td><td>2</td><td>온천교회 관계자</td><td>간헐적 기침</td></tr>
+<tr><td>151</td><td></td><td>부산-40</td><td>2월24일</td><td>2월16일</td><td>76</td><td>남</td><td>사하구</td><td>고신대학교 복음병원 퇴원</td><td>9</td><td>확진자 접촉</td><td>몸살 기운</td></tr>
+<tr><td>152</td><td></td><td>부산-39</td><td>2월24일</td><td>2월19일</td><td>29</td><td>남</td><td>해운대구</td><td>해운대백병원</td><td>117</td><td>부산-11번 확진자 접촉</td><td>콧물</td></tr>
+<tr><td>153</td><td></td><td>부산-38</td><td>2월23일</td><td></td><td>57</td><td>여</td><td>동래구</td><td>부산대병원</td><td></td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>154</td><td></td><td>부산-37</td><td>2월23일</td><td></td><td>28</td><td>남</td><td>금정구</td><td>부산대병원</td><td>19</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>155</td><td></td><td>부산-36</td><td>2월23일</td><td></td><td>28</td><td>여</td><td>동래구</td><td>부산대병원</td><td>19</td><td>온천교회 2.16 수련회 참석</td><td></td></tr>
+<tr><td>156</td><td></td><td>부산-35</td><td>2월23일</td><td></td><td>20</td><td>여</td><td>동래구</td><td>부산대병원</td><td>3</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>157</td><td></td><td>부산-34</td><td>2월23일</td><td>2월22일</td><td>25</td><td>남</td><td>동래구</td><td>부산의료원 퇴원</td><td>26</td><td>온천교회 관계자</td><td>두통</td></tr>
+<tr><td>158</td><td></td><td>부산-33</td><td>2월23일</td><td>2월23일</td><td>20</td><td>여</td><td>동래구</td><td>부산백병원</td><td></td><td>온천교회 관계자</td><td>입과 목이 마름</td></tr>
+<tr><td>159</td><td></td><td>부산-32</td><td>2월23일</td><td></td><td>21</td><td>여</td><td>동래구</td><td>부산백병원</td><td>1</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>160</td><td></td><td>부산-31</td><td>2월23일</td><td></td><td>22</td><td>여</td><td>동래구</td><td>부산백병원</td><td>3</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>161</td><td></td><td>부산-30</td><td>2월23일</td><td>2월22일</td><td>27</td><td>남</td><td>금정구</td><td>부산대병원</td><td>21</td><td>온천교회 관계자</td><td>발열, 오한</td></tr>
+<tr><td>162</td><td></td><td>부산-29</td><td>2월23일</td><td></td><td>21</td><td>남</td><td>동래구</td><td>부산대병원</td><td>27</td><td>기타</td><td></td></tr>
+<tr><td>163</td><td></td><td>부산-28</td><td>2월23일</td><td>2월22일</td><td>65</td><td>여</td><td>수영구</td><td>부산대병원</td><td>8</td><td>부산-27번 확진자 접촉</td><td>기침, 두통</td></tr>
+<tr><td>164</td><td></td><td>부산-27</td><td>2월23일</td><td></td><td>28</td><td>여</td><td>수영구</td><td>부산대병원</td><td>10</td><td>대구 방문</td><td></td></tr>
+<tr><td>165</td><td></td><td>부산-26</td><td>2월23일</td><td></td><td>27</td><td>남</td><td>해운대구</td><td>부산대병원</td><td>7</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>166</td><td></td><td>부산-25</td><td>2월23일</td><td>2월23일</td><td>44</td><td>여</td><td>해운대구</td><td>부산대병원</td><td>9</td><td>부산-2번 확진자 접촉</td><td></td></tr>
+<tr><td>167</td><td></td><td>부산-24</td><td>2월23일</td><td>2월22일</td><td>27</td><td>여</td><td>사하구</td><td>부산대병원</td><td>2</td><td>신천지 교인</td><td>발열, 근육통, 오한</td></tr>
+<tr><td>168</td><td></td><td>부산-23</td><td>2월23일</td><td>2월23일</td><td>27</td><td>남</td><td>사하구</td><td>부산대병원</td><td>1</td><td>온천교회 관계자</td><td>근육통</td></tr>
+<tr><td>169</td><td></td><td>부산-22</td><td>2월23일</td><td>2월19일</td><td>21</td><td>여</td><td>강서구</td><td>부산대병원</td><td>19</td><td>온천교회 관계자</td><td>발열, 기침, 인후통, 근육통</td></tr>
+<tr><td>170</td><td></td><td>부산-21</td><td>2월23일</td><td></td><td>18</td><td>여</td><td>강서구</td><td>부산대병원</td><td>9</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>171</td><td></td><td>부산-20</td><td>2월23일</td><td>2월20일</td><td>56</td><td>여</td><td>서구</td><td>부산대병원</td><td>19</td><td>부산-13번 확진자 접촉</td><td>오한, 발열</td></tr>
+<tr><td>172</td><td></td><td>부산-19</td><td>2월23일</td><td></td><td>30</td><td>여</td><td>서구</td><td>부산의료원 퇴원</td><td>14</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>173</td><td></td><td>부산-18</td><td>2월23일</td><td></td><td>25</td><td>남</td><td>사하구</td><td>부산대병원</td><td>38</td><td>대구 방문</td><td></td></tr>
+<tr><td>174</td><td></td><td>부산-17</td><td>2월23일</td><td>2월22일</td><td>42</td><td>남</td><td>남구</td><td>부산대병원</td><td>1</td><td>경북 청도 방문</td><td>오한, 근육통, 두통</td></tr>
+<tr><td>175</td><td></td><td>부산-16</td><td>2월22일</td><td></td><td>33</td><td>남</td><td>금정구</td><td>부산의료원</td><td>19</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>176</td><td></td><td>부산-15</td><td>2월22일</td><td></td><td>19</td><td>남</td><td>동래구</td><td>부산의료원</td><td>34</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>177</td><td></td><td>부산-14</td><td>2월22일</td><td></td><td>32</td><td>남</td><td>동래구</td><td>부산의료원</td><td>27</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>178</td><td></td><td>부산-13</td><td>2월22일</td><td></td><td>25</td><td>남</td><td>서구</td><td>부산의료원</td><td>18</td><td>대구 방문</td><td></td></tr>
+<tr><td>179</td><td></td><td>부산-12</td><td>2월22일</td><td></td><td>56</td><td>여</td><td>남구</td><td>부산의료원</td><td>22</td><td>신천지 교인</td><td></td></tr>
+<tr><td>180</td><td></td><td>부산-11</td><td>2월22일</td><td></td><td>26</td><td>여</td><td>북구</td><td>부산의료원</td><td>23</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>181</td><td></td><td>부산-10</td><td>2월22일</td><td></td><td>46</td><td>남</td><td>동래구</td><td>부산의료원</td><td>18</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>182</td><td></td><td>부산-9</td><td>2월22일</td><td></td><td>21</td><td>남</td><td>동래구</td><td>부산의료원</td><td>4</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>183</td><td></td><td>부산-8</td><td>2월22일</td><td></td><td>21</td><td>남</td><td>동래구</td><td>부산의료원 퇴원</td><td>27</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>184</td><td></td><td>부산-7</td><td>2월22일</td><td></td><td>21</td><td>남</td><td>거주지불명</td><td>부산대병원</td><td>474</td><td>신천지 교인</td><td></td></tr>
+<tr><td>185</td><td></td><td>부산-6</td><td>2월22일</td><td></td><td>82</td><td>여</td><td>연제구</td><td>부산대병원</td><td>0</td><td>부산-2번 확진자 접촉</td><td></td></tr>
+<tr><td>186</td><td></td><td>부산-5</td><td>2월22일</td><td></td><td>25</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>14</td><td>부산-2번 확진자 접촉</td><td></td></tr>
+<tr><td>187</td><td></td><td>부산-4</td><td>2월22일</td><td>2월21일</td><td>22</td><td>여</td><td>해운대구</td><td>부산대병원</td><td>8</td><td>신천지 교인</td><td></td></tr>
+<tr><td>188</td><td></td><td>부산-3</td><td>2월22일</td><td></td><td>20</td><td>여</td><td>해운대구</td><td>부산대병원</td><td>16</td><td>대구 방문</td><td></td></tr>
+<tr><td>189</td><td></td><td>부산-2</td><td>2월21일</td><td></td><td>57</td><td>여</td><td>해운대구</td><td>부산의료원</td><td>132</td><td>대구 확진자 접촉</td><td></td></tr>
+<tr><td>190</td><td></td><td>부산-1</td><td>2월21일</td><td></td><td>19</td><td>남</td><td>동래구</td><td>부산의료원</td><td>1010</td><td>온천교회 관계자</td><td></td></tr>
+<tr><td>191</td><td>5581</td><td>인천-9</td><td>3월3일</td><td></td><td>8</td><td>남</td><td></td><td></td><td></td><td>확진자 가족</td><td></td></tr>
+<tr><td>192</td><td>5026</td><td>인천-8</td><td>3월3일</td><td></td><td>48</td><td>여</td><td>부평구</td><td>인천의료원</td><td></td><td>신천지 과천교회 방문</td><td></td></tr>
+<tr><td>193</td><td>4122</td><td>인천-7</td><td>3월1일</td><td></td><td>57</td><td>남</td><td>연수구</td><td>인천의료원</td><td></td><td>서울에서 확진자 접촉</td><td></td></tr>
+<tr><td>194</td><td>2641</td><td>인천-6</td><td>2월28일</td><td>2월27일</td><td>44</td><td>남</td><td>연수구</td><td>길병원</td><td></td><td>대구 방문</td><td>발열</td></tr>
+<tr><td>195</td><td>2592</td><td>인천-5</td><td>2월28일</td><td></td><td>64</td><td>남</td><td>부평구</td><td></td><td></td><td>서울에서 확진자 접촉</td><td></td></tr>
+<tr><td>196</td><td>2021</td><td>인천-4</td><td>2월28일</td><td></td><td>28</td><td>여</td><td>서구</td><td></td><td></td><td>서울 중구 의류회사 근무</td><td>발열</td></tr>
+<tr><td>197</td><td>1129</td><td>인천-3</td><td>2월25일</td><td>1월31일</td><td>57</td><td>남</td><td>미추홀구</td><td>퇴원 (3월3일)</td><td></td><td>외국인 여행 가이드</td><td>인후통, 가래, 기침</td></tr>
+<tr><td>198</td><td>398</td><td>인천-2</td><td>2월22일</td><td>2월21일</td><td>60</td><td>여</td><td>부평구</td><td>인천의료원</td><td></td><td>신천지 대구교회 방문</td><td>미열</td></tr>
+<tr><td>199</td><td>1</td><td>인천-1</td><td>1월20일</td><td>1월18일</td><td>35</td><td>여</td><td></td><td>퇴원 (2월26일)</td><td></td><td>중국인, 우한시 거주 인천공항 환승객</td><td>발열, 오한, 근육통</td></tr>
+<tr><td>200</td><td>5031</td><td>광주-13</td><td>3월4일</td><td>2월27일</td><td>50대</td><td>남</td><td></td><td>빛고을전남대병원</td><td>27</td><td></td><td>발열</td></tr>
+<tr><td>201</td><td>5141</td><td>광주-12</td><td>3월2일</td><td></td><td>80대</td><td>여</td><td>남구</td><td>전남대병원</td><td>14</td><td>광주-11번 확진자 가족</td><td></td></tr>
+<tr><td>202</td><td>4257</td><td>광주-11</td><td>3월2일</td><td></td><td>20대</td><td>남</td><td></td><td>전남대병원</td><td>85</td><td>광주-10번 확진자 가족</td><td></td></tr>
+<tr><td>203</td><td>4388</td><td>광주-10</td><td>3월2일</td><td></td><td>40대</td><td>여</td><td></td><td>전남대병원</td><td>86</td><td>광주-11번 확진자 가족</td><td></td></tr>
+<tr><td>204</td><td>611</td><td>광주-9</td><td>2월23일</td><td></td><td>30대</td><td>여</td><td>서구</td><td>조선대병원</td><td>0</td><td>광주-4번 확진자 가족</td><td></td></tr>
+<tr><td>205</td><td>589</td><td>광주-8</td><td>2월23일</td><td></td><td>30대</td><td>여</td><td>서구</td><td>조선대병원 퇴원</td><td>47</td><td>광주-3번 확진자 가족</td><td></td></tr>
+<tr><td>206</td><td>489</td><td>광주-7</td><td>2월22일</td><td></td><td>30대</td><td>남</td><td>남구</td><td>전남대병원</td><td>39</td><td>광주-3번 확진자의 동료</td><td></td></tr>
+<tr><td>207</td><td>239</td><td>광주-6</td><td>2월21일</td><td></td><td>30대</td><td>남</td><td>서구</td><td>전남대병원</td><td>14</td><td>광주-3번 확진자와 대구 동행</td><td></td></tr>
+<tr><td>208</td><td>210</td><td>광주-5</td><td>2월21일</td><td></td><td>30대</td><td>남</td><td>북구</td><td>전남대병원</td><td>156</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>209</td><td>164</td><td>광주-4</td><td>2월21일</td><td></td><td>30대</td><td>남</td><td>서구</td><td>조선대병원</td><td>30</td><td>광주-3번 확진자 밀접 접촉자, 신천지 대구교회 방문</td><td></td></tr>
+<tr><td>210</td><td>126</td><td>광주-3</td><td>2월20일</td><td></td><td>30대</td><td>남</td><td></td><td>조선대병원</td><td>65</td><td>대구 방문</td><td></td></tr>
+<tr><td>211</td><td>18</td><td>광주-2</td><td>2월5일</td><td></td><td>20</td><td>여</td><td></td><td>전남대병원 퇴원</td><td>8</td><td>광주-1번 확진자 가족</td><td></td></tr>
+<tr><td>212</td><td>16</td><td>광주-1</td><td>2월4일</td><td></td><td>42</td><td>여</td><td></td><td>전남대병원 퇴원</td><td>450</td><td></td><td></td></tr>
+<tr><td>213</td><td>6018</td><td>대전-18</td><td>3월4일</td><td></td><td>20대</td><td>남</td><td>유성구</td><td>충남대병원</td><td></td><td>신천지 대구교회 교육생</td><td></td></tr>
+<tr><td>214</td><td>6078</td><td>대전-17</td><td>3월4일</td><td></td><td>40대</td><td>여</td><td>유성구</td><td>충남대병원</td><td></td><td>전국 1913번(대전-11번) 확진자 가족</td><td></td></tr>
+<tr><td>215</td><td>5764</td><td>대전-16</td><td>3월4일</td><td></td><td>50대</td><td>남</td><td>유성구</td><td>국군대전병원</td><td>12</td><td></td><td></td></tr>
+<tr><td>216</td><td>4996</td><td>대전-15</td><td>3월3일</td><td></td><td>20대</td><td>남</td><td>유성구</td><td>충남대병원</td><td>7</td><td>전국 31번 대구 확진자 접촉</td><td></td></tr>
+<tr><td>217</td><td>3797</td><td>대전-14</td><td>3월1일</td><td></td><td>20대</td><td>남</td><td>서구</td><td>충남대병원</td><td>20</td><td></td><td></td></tr>
+<tr><td>218</td><td>2025</td><td>대전-13</td><td>2월28일</td><td></td><td>20대</td><td>여</td><td>서구</td><td>충남대병원</td><td>2</td><td>대구 부모를 접촉한 친구와 접촉 추정</td><td></td></tr>
+<tr><td>219</td><td>2020</td><td>대전-12</td><td>2월28일</td><td></td><td>40대</td><td>여</td><td>대덕구</td><td>충남대병원</td><td>11</td><td>충남 천안 확진자를 접촉한 이와 여행</td><td></td></tr>
+<tr><td>220</td><td>1913</td><td>대전-11</td><td>2월28일</td><td></td><td>40대</td><td>남</td><td>유성구</td><td>충남대병원</td><td>61</td><td>전국 1257번(대전-6번) 확진자 접촉</td><td></td></tr>
+<tr><td>221</td><td>1788</td><td>대전-10</td><td>2월27일</td><td></td><td>30대</td><td>남</td><td>서구</td><td>충남대병원</td><td>3</td><td>전국 1257번(대전-6번) 확진자 동료</td><td></td></tr>
+<tr><td>222</td><td>1569</td><td>대전-9</td><td>2월26일</td><td></td><td>70대</td><td>남</td><td>충남 공주시</td><td>을지대병원</td><td>5</td><td></td><td></td></tr>
+<tr><td>223</td><td>1568</td><td>대전-8</td><td>2월26일</td><td></td><td>30대</td><td>남</td><td>서구</td><td>충남대병원</td><td>2</td><td>전국 1252번(대전-5번) 확진자 동료</td><td></td></tr>
+<tr><td>224</td><td>1856</td><td>대전-7</td><td>2월26일</td><td></td><td>30대</td><td>남</td><td>서구</td><td>충남대병원</td><td>2</td><td>전국 1252번(대전-5번) 확진자 동료</td><td></td></tr>
+<tr><td>225</td><td>1257</td><td>대전-6</td><td>2월26일</td><td></td><td>39</td><td>여</td><td>대덕구</td><td>충남대병원</td><td>6</td><td>대구 여행</td><td></td></tr>
+<tr><td>226</td><td>1252</td><td>대전-5</td><td>2월26일</td><td></td><td>33</td><td>남</td><td>유성구</td><td>충남대병원</td><td>15</td><td>동료의 부인이 대구 확진자</td><td></td></tr>
+<tr><td>227</td><td>1256</td><td>대전-4</td><td>2월26일</td><td></td><td>40</td><td>여</td><td>유성구</td><td>충남대병원 퇴원 (3월2일)</td><td>44</td><td></td><td></td></tr>
+<tr><td>228</td><td>573</td><td>대전-3</td><td>2월23일</td><td></td><td>60대</td><td>남</td><td>유성구</td><td>충남대병원</td><td>1</td><td>전국 372번(대전-2번) 확진자 가족</td><td></td></tr>
+<tr><td>229</td><td>372</td><td>대전-2</td><td>2월22일</td><td></td><td>65</td><td>여</td><td>유성구</td><td>충남대병원</td><td>9</td><td>대구 거주 지인 접촉</td><td></td></tr>
+<tr><td>230</td><td>241</td><td>대전-1</td><td>2월21일</td><td></td><td>23</td><td>여</td><td></td><td>충남대병원 퇴원</td><td>23</td><td>대구 방문</td><td></td></tr>
+<tr><td>231</td><td></td><td>울산-23</td><td>3월3일</td><td></td><td>30</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>232</td><td></td><td>울산-22</td><td>3월3일</td><td></td><td>58</td><td>남</td><td>북구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>233</td><td></td><td>울산-21</td><td>3월3일</td><td></td><td>56</td><td>여</td><td>북구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>234</td><td></td><td>울산-20</td><td>3월1일</td><td></td><td>68</td><td>여</td><td>동구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>235</td><td></td><td>울산-19</td><td>3월1일</td><td></td><td>72</td><td>남</td><td>동구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>236</td><td></td><td>울산-18</td><td>3월1일</td><td></td><td>47</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>237</td><td></td><td>울산-17</td><td>2월28일</td><td></td><td>27</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td>대구 거주 오빠와 접촉, 울산-13번 확진자 가족</td><td></td></tr>
+<tr><td>238</td><td></td><td>울산-16</td><td>2월28일</td><td></td><td>40</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>239</td><td></td><td>울산-15</td><td>2월28일</td><td></td><td>67</td><td>남</td><td>남구</td><td>울산대병원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>240</td><td></td><td>울산-14</td><td>2월28일</td><td></td><td>27</td><td>남</td><td>중구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>241</td><td></td><td>울산-13</td><td>2월28일</td><td></td><td>53</td><td>남</td><td>남구</td><td>울산대병원</td><td></td><td>대구 거주 아들과 만남</td><td></td></tr>
+<tr><td>242</td><td></td><td>울산-12</td><td>2월28일</td><td></td><td>25</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>243</td><td></td><td>울산-11</td><td>2월27일</td><td></td><td>37</td><td>남</td><td>동구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>244</td><td></td><td>울산-10</td><td>2월27일</td><td></td><td>20</td><td>남</td><td>북구</td><td>울산대병원</td><td></td><td>신천지 대구교회 예배</td><td></td></tr>
+<tr><td>245</td><td></td><td>울산-9</td><td>2월27일</td><td></td><td>19</td><td>남</td><td>북구</td><td>울산대병원 퇴원 (3월5일)</td><td></td><td>신천지 대구교회 예배</td><td></td></tr>
+<tr><td>246</td><td></td><td>울산-8</td><td>2월27일</td><td></td><td>56</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>247</td><td></td><td>울산-7</td><td>2월27일</td><td></td><td>23</td><td>여</td><td>울주군</td><td>울산대병원</td><td></td><td>경북 성주 확진자와 차에 동승</td><td></td></tr>
+<tr><td>248</td><td></td><td>울산-6</td><td>2월27일</td><td></td><td>73</td><td>여</td><td>남구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>249</td><td></td><td>울산-5</td><td>2월26일</td><td></td><td>21</td><td>남</td><td>남구</td><td>울산대병원</td><td></td><td>전국 31번 대구 확진자와 접촉</td><td></td></tr>
+<tr><td>250</td><td></td><td>울산-4</td><td>2월25일</td><td></td><td>62</td><td>여</td><td>동구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>251</td><td></td><td>울산-3</td><td>2월25일</td><td></td><td>28</td><td>남</td><td>중구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>252</td><td></td><td>울산-2</td><td>2월25일</td><td></td><td>49</td><td>여</td><td>중구</td><td>울산대병원</td><td></td><td></td><td></td></tr>
+<tr><td>253</td><td></td><td>울산-1</td><td>2월22일</td><td></td><td>24</td><td>여</td><td></td><td>울산대병원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>254</td><td></td><td>세종-2</td><td>3월5일</td><td>3월5일</td><td>41</td><td>여</td><td>새롬동</td><td></td><td></td><td>천안 줌바댄스 강사 워크숍 참석</td><td>피로감, 콧물</td></tr>
+<tr><td>255</td><td>346</td><td>세종-1</td><td>2월22일</td><td></td><td>32</td><td>남</td><td>대구광역시</td><td>천안단국대병원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>256</td><td></td><td>경기-110</td><td>3월4일</td><td>2월24일</td><td>49</td><td>여</td><td>광명</td><td>경기도의료원 수원병원</td><td></td><td></td><td>발열, 기침</td></tr>
+<tr><td>257</td><td></td><td>경기-109</td><td>3월4일</td><td></td><td>8</td><td>여</td><td>화성</td><td>경기도의료원 이천병원</td><td></td><td>경기-104 확진자의 자녀</td><td></td></tr>
+<tr><td>258</td><td></td><td>경기-108</td><td>3월4일</td><td></td><td>13</td><td>여</td><td>화성</td><td>경기도의료원 이천병원</td><td></td><td>경기-104 확진자의 자녀</td><td></td></tr>
+<tr><td>259</td><td></td><td>경기-107</td><td>3월4일</td><td></td><td>44</td><td>남</td><td>화성</td><td>경기도의료원 이천병원</td><td></td><td>경기-104 확진자의 배우자</td><td></td></tr>
+<tr><td>260</td><td></td><td>경기-106</td><td>3월4일</td><td>2월29일</td><td>27</td><td>남</td><td>용인</td><td>경기도의료원 포천병원</td><td></td><td>부대 내 확진자 발생으로 전수 검사, 확진</td><td>발열, 가래</td></tr>
+<tr><td>261</td><td></td><td>경기-105</td><td>3월4일</td><td></td><td>28</td><td>남</td><td>안양</td><td>경기도의료원 포천병원</td><td></td><td>전국 188번 확진자와 접촉, 2.16 신천지 과천교회 예배 참석</td><td></td></tr>
+<tr><td>262</td><td></td><td>경기-104</td><td>3월4일</td><td></td><td>42</td><td>여</td><td>수원</td><td>경기도의료원 이천병원</td><td></td><td>전국 4117번 확진자와 접촉</td><td></td></tr>
+<tr><td>263</td><td></td><td>경기-103</td><td>3월4일</td><td></td><td>7</td><td>여</td><td>용인</td><td>경기도의료원 안성병원</td><td></td><td>전국 5128번, 4921번 확진자와 접촉</td><td></td></tr>
+<tr><td>264</td><td></td><td>경기-102</td><td>3월3일</td><td>2월21일</td><td>44</td><td>여</td><td>용인</td><td>경기도의료원 안성병원</td><td></td><td>유증상자</td><td>발열, 인후통</td></tr>
+<tr><td>265</td><td></td><td>경기-101</td><td>3월3일</td><td>2월21일</td><td>41</td><td>남</td><td>용인</td><td>경기도의료원 안성병원</td><td></td><td>유증상자</td><td>발열, 인후통</td></tr>
+<tr><td>266</td><td></td><td>경기-100</td><td>3월3일</td><td></td><td>22</td><td>남</td><td>용인</td><td>국군수도병원</td><td></td><td>부대 내 생활 중 발열</td><td>발열</td></tr>
+<tr><td>267</td><td>4816</td><td>경기-99</td><td>3월2일</td><td></td><td>62</td><td>여</td><td>남양주</td><td>경기도의료원 안성병원</td><td></td><td>전국 4235번 확진자와 접촉</td><td></td></tr>
+<tr><td>268</td><td>5051</td><td>경기-98</td><td>3월3일</td><td></td><td>39</td><td>남</td><td>남양주</td><td>경기도의료원 안성병원</td><td></td><td>전국 4235번 확진자와 접촉</td><td></td></tr>
+<tr><td>269</td><td>4892</td><td>경기-97</td><td>3월3일</td><td></td><td>11</td><td>여</td><td>수원</td><td>성남의료원</td><td></td><td>전국 2736번 확진자와 접촉</td><td></td></tr>
+<tr><td>270</td><td>5173</td><td>경기-96</td><td>3월3일</td><td></td><td>46</td><td>여</td><td>수원</td><td>경기도의료원 수원병원</td><td></td><td>전국 2736번 확진자와 접촉</td><td></td></tr>
+<tr><td>271</td><td></td><td>경기-95</td><td>3월3일</td><td>2월24일</td><td>36</td><td>여</td><td>용인</td><td>성남의료원</td><td></td><td>유증상자</td><td>발열</td></tr>
+<tr><td>272</td><td>4253</td><td>경기-94</td><td>3월2일</td><td>2월22일</td><td>64</td><td>남</td><td>남양주</td><td>한양대 구리병원</td><td></td><td>유증상자</td><td>감기, 호흡 곤란</td></tr>
+<tr><td>273</td><td>4117</td><td>경기-93</td><td>3월2일</td><td></td><td>55</td><td>여</td><td>수원</td><td>성남의료원</td><td></td><td>전국 2736번, 3599번 확진자와 접촉</td><td></td></tr>
+<tr><td>274</td><td>4384</td><td>경기-92</td><td>3월2일</td><td></td><td>23</td><td>남</td><td>수원</td><td>경기도의료원 수원병원</td><td></td><td>전국 3029번 확진자와 접촉</td><td></td></tr>
+<tr><td>275</td><td>3780</td><td>경기-91</td><td>3월1일</td><td></td><td>46</td><td>남</td><td>고양</td><td>경기도의료원 수원병원</td><td></td><td>19.9.20~20.2.20 대구 일시적 거주, 대구 확진자와 접촉</td><td></td></tr>
+<tr><td>276</td><td>3558</td><td>경기-90</td><td>3월1일</td><td></td><td>44</td><td>여</td><td>용인</td><td>경기도의료원 수원병원</td><td></td><td>전국 1747번 확진자의 배우자</td><td></td></tr>
+<tr><td>277</td><td>2663</td><td>경기-89</td><td>2월29일</td><td></td><td>39</td><td>남</td><td>과천</td><td>경기도의료원 수원병원</td><td></td><td>전국 188번 확진자와 접촉, 2.16 선천지 과천교회 예배 참석</td><td></td></tr>
+<tr><td>278</td><td>3583</td><td>경기-88</td><td>2월29일</td><td></td><td>47</td><td>남</td><td>남양주</td><td>경기도의료원 파주병원</td><td></td><td>전국 31번 확진자와 접촉</td><td></td></tr>
+<tr><td>279</td><td>3300</td><td>경기-87</td><td>2월29일</td><td></td><td>13</td><td>여</td><td>화성</td><td>경기도의료원 안성병원</td><td></td><td>화성 확진자와 접촉</td><td></td></tr>
+<tr><td>280</td><td>3083</td><td>경기-86</td><td>2월29일</td><td></td><td>46</td><td>남</td><td>수원</td><td>경기도의료원 파주병원</td><td></td><td>화성 확진자와 접촉</td><td></td></tr>
+<tr><td>281</td><td>3446</td><td>경기-85</td><td>2월29일</td><td></td><td>30</td><td>남</td><td>시흥</td><td>경기도의료원 안성병원</td><td></td><td>유증상자</td><td>발열 및 오한</td></tr>
+<tr><td>282</td><td>3079</td><td>경기-84</td><td>2월29일</td><td></td><td>15</td><td>여</td><td>화성</td><td>경기도의료원 안성병원</td><td></td><td>화성 확진자와 접촉</td><td></td></tr>
+<tr><td>283</td><td>3068</td><td>경기-83</td><td>2월29일</td><td></td><td>42</td><td>여</td><td>화성</td><td>경기도의료원 안성병원</td><td></td><td>화성 확진자와 접촉</td><td></td></tr>
+<tr><td>284</td><td>3041</td><td>경기-82</td><td>2월29일</td><td></td><td>54</td><td>여</td><td>오산</td><td>경기도의료원 안성병원</td><td></td><td>경기-81번 확진자와 접촉</td><td></td></tr>
+<tr><td>285</td><td>2599</td><td>경기-81</td><td>2월29일</td><td></td><td>57</td><td>남</td><td>오산</td><td>경기도의료원 안성병원</td><td></td><td>수원 영통 확진자와 접촉</td><td></td></tr>
+<tr><td>286</td><td>3041</td><td>경기-80</td><td>2월29일</td><td></td><td>23</td><td>여</td><td>수원</td><td>경기도의료원 안성병원</td><td></td><td>유증상자</td><td>가래, 인후통</td></tr>
+<tr><td>287</td><td>3760</td><td>경기-79</td><td>2월28일</td><td></td><td>23</td><td>남</td><td>안양</td><td>경기도의료원 안성병원</td><td></td><td>청주공군부대 확진자와 접촉</td><td></td></tr>
+<tr><td>288</td><td>2933</td><td>경기-78</td><td>2월28일</td><td></td><td>20</td><td>남</td><td>이천</td><td>경기도의료원 파주병원</td><td></td><td>신천지 대구교회 예배 참석, 전국 31번 확진자와 접촉</td><td></td></tr>
+<tr><td>289</td><td>2180</td><td>경기-77</td><td>2월28일</td><td></td><td>74</td><td>남</td><td>이천</td><td>경기도의료원 수원병원</td><td></td><td>대구 거주자, 2.26 딸집 방문</td><td>발열, 기침</td></tr>
+<tr><td>290</td><td>2179</td><td>경기-76</td><td>2월28일</td><td></td><td>75</td><td>여</td><td>이천</td><td>경기도의료원 수원병원</td><td></td><td>대구 거주자, 2.26 딸집 방문</td><td>발열, 기침</td></tr>
+<tr><td>291</td><td>2416</td><td>경기-75</td><td>2월28일</td><td></td><td>40</td><td>여</td><td>시흥</td><td>경기도의료원 수원병원</td><td></td><td>2.13-15 대구 방문</td><td>오한, 근육통</td></tr>
+<tr><td>292</td><td>2286</td><td>경기-74</td><td>2월28일</td><td></td><td>88</td><td>여</td><td>평택</td><td>경기도의료원 수원병원</td><td></td><td>대구 거주자, 2.24 아들집(평택) 방문</td><td></td></tr>
+<tr><td>293</td><td>2514</td><td>경기-73</td><td>2월28일</td><td></td><td>41</td><td>여</td><td>화성</td><td>경기도의료원 파주병원</td><td></td><td>경기-49번(전국 1227번) 확진자와 접촉</td><td></td></tr>
+<tr><td>294</td><td>2181</td><td>경기-72</td><td>2월28일</td><td>2월22일</td><td>59</td><td>남</td><td>화성</td><td>경기도의료원 파주병원</td><td></td><td>유증상자</td><td>근육통</td></tr>
+<tr><td>295</td><td>1949</td><td>경기-71</td><td>2월27일</td><td></td><td>33</td><td>여</td><td>성남</td><td>성남의료원</td><td></td><td>서울 강남구 확진자와 접촉</td><td></td></tr>
+<tr><td>296</td><td>1892</td><td>경기-70</td><td>2월27일</td><td></td><td>24</td><td>여</td><td>고양</td><td>경기도의료원 파주병원</td><td></td><td>경기-47번(전국 1177번) 확진자와 접촉</td><td></td></tr>
+<tr><td>297</td><td>2736</td><td>경기-69</td><td>2월27일</td><td></td><td>49</td><td>여</td><td>화성</td><td>경기도의료원 수원병원</td><td></td><td>경기-37번(전국 835번) 확진자와 접촉</td><td></td></tr>
+<tr><td>298</td><td>2022</td><td>경기-68</td><td>2월27일</td><td></td><td>35</td><td>남</td><td>성남</td><td>성남의료원</td><td></td><td>서울 강남구 확진자와 접촉</td><td></td></tr>
+<tr><td>299</td><td>1980</td><td>경기-67</td><td>2월27일</td><td></td><td>50</td><td>남</td><td>이천</td><td>경기도의료원 수원병원</td><td></td><td>경기-46번(전국 937번) 확진자와 접촉</td><td></td></tr>
+<tr><td>300</td><td>1981</td><td>경기-66</td><td>2월27일</td><td></td><td>45</td><td>남</td><td>이천</td><td>경기도의료원 수원병원</td><td></td><td>경기-46번(전국 937번) 확진자와 접촉</td><td></td></tr>
+<tr><td>301</td><td>2733</td><td>경기-65</td><td>2월27일</td><td></td><td>51</td><td>남</td><td>수원</td><td>성남의료원</td><td></td><td>2.17 대구 방문</td><td>발열, 인후통</td></tr>
+<tr><td>302</td><td></td><td>경기-64</td><td>2월27일</td><td></td><td>74</td><td>여</td><td>고양</td><td>경기도의료원 파주병원</td><td></td><td>서울 은평성모병원 간병인</td><td>가래, 오한</td></tr>
+<tr><td>303</td><td>1725</td><td>경기-63</td><td>2월27일</td><td></td><td>25</td><td>여</td><td>용인</td><td>경기도의료원 수원병원</td><td></td><td>경북 안동 확진자와 접촉</td><td></td></tr>
+<tr><td>304</td><td>1747</td><td>경기-62</td><td>2월27일</td><td></td><td>51</td><td>남</td><td>용인</td><td>경기도의료원 파주병원</td><td></td><td>경기-52번(용인 수지 확진자)의 직장 동료</td><td></td></tr>
+<tr><td>305</td><td>1744</td><td>경기-61</td><td>2월27일</td><td></td><td>41</td><td>남</td><td>수원</td><td>경기도의료원 파주병원</td><td></td><td>경기-37번(전국 835번) 확진자와 접촉</td><td></td></tr>
+<tr><td>306</td><td>1752</td><td>경기-60</td><td>2월27일</td><td></td><td>41</td><td>남</td><td>파주</td><td>경기도의료원 파주병원</td><td></td><td>경기-47번(전국 1177번) 확진자와 접촉</td><td></td></tr>
+<tr><td>307</td><td>1798</td><td>경기-59</td><td>2월27일</td><td></td><td>38</td><td>여</td><td>수원</td><td>경기도의료원 파주병원</td><td></td><td>서울 노원구 확진자와 접촉</td><td></td></tr>
+<tr><td>308</td><td>1753</td><td>경기-58</td><td>2월27일</td><td></td><td>30</td><td>여</td><td>용인</td><td>경기도의료원 수원병원</td><td></td><td>경기-52번 확진자의 배우자</td><td></td></tr>
+<tr><td>309</td><td></td><td>경기-57</td><td>2월26일</td><td></td><td>31</td><td>남</td><td>화성</td><td>경기도의료원 수원병원</td><td></td><td>2.17-21 구미 출장</td><td></td></tr>
+<tr><td>310</td><td>1264</td><td>경기-56</td><td>2월26일</td><td></td><td>28</td><td>남</td><td>과천</td><td>경기도의료원 수원병원</td><td></td><td>전국 188번 확진자와 접촉, 2.16 신천지 과천 집회 참석</td><td></td></tr>
+<tr><td>311</td><td>1279</td><td>경기-55</td><td>2월26일</td><td></td><td>27</td><td>남</td><td>과천</td><td>경기도의료원 수원병원</td><td></td><td>전국 188번 확진자와 접촉, 2.16 신천지 과천 집회 참석</td><td></td></tr>
+<tr><td>312</td><td>1225</td><td>경기-54</td><td>2월26일</td><td>2월20일</td><td>35</td><td>여</td><td>광명</td><td>명지병원 퇴원 (3월4일)</td><td></td><td>유증상자</td><td>발열, 기침</td></tr>
+<tr><td>313</td><td>1292</td><td>경기-53</td><td>2월26일</td><td></td><td>26</td><td>여</td><td>평택</td><td>경기도의료원 파주병원</td><td></td><td>2.19-24 대구 방문</td><td></td></tr>
+<tr><td>314</td><td>1402</td><td>경기-52</td><td>2월26일</td><td></td><td>35</td><td>남</td><td>용인</td><td>경기도의료원 파주병원</td><td></td><td>유증상자</td><td></td></tr>
+<tr><td>315</td><td>1251</td><td>경기-51</td><td>2월26일</td><td></td><td>78</td><td>남</td><td>남양주</td><td>국군수도병원</td><td></td><td>대구 거주자, 경기-50번 확진자의 배우자</td><td></td></tr>
+<tr><td>316</td><td>1250</td><td>경기-50</td><td>2월26일</td><td></td><td>73</td><td>여</td><td>남양주</td><td>경기도의료원 수원병원</td><td></td><td>전국 31번 확진자와 접촉</td><td></td></tr>
+<tr><td>317</td><td>1227</td><td>경기-49</td><td>2월26일</td><td></td><td>39</td><td>남</td><td>수원</td><td>경기도의료원 수원병원</td><td></td><td>경기-37번(전국 835번) 확진자와 접촉</td><td></td></tr>
+<tr><td>318</td><td>1184</td><td>경기-48</td><td>2월25일</td><td></td><td>64</td><td>남</td><td>이천</td><td>경기도의료원 수원병원</td><td></td><td>전국 188번 확진자와 접촉</td><td></td></tr>
+<tr><td>319</td><td>1177</td><td>경기-47</td><td>2월25일</td><td></td><td>47</td><td>남</td><td>안양</td><td>경기도의료원 수원병원</td><td></td><td>유증상자, 한림대성심병원에서 확진</td><td></td></tr>
+<tr><td>320</td><td>937</td><td>경기-46</td><td>2월25일</td><td></td><td>63</td><td>남</td><td>이천</td><td>명지병원</td><td></td><td>2.15~16 대구 방문</td><td></td></tr>
+<tr><td>321</td><td>1013</td><td>경기-45</td><td>2월25일</td><td></td><td>39</td><td>남</td><td>수원</td><td>경기도의료원 파주병원 퇴원 (2월27일)</td><td></td><td>2.8~10 대구 방문</td><td></td></tr>
+<tr><td>322</td><td></td><td>경기-44</td><td>2월25일</td><td></td><td>67</td><td>남</td><td>평택</td><td>경기도의료원 파주병원</td><td></td><td>유증상자, 국립경찰병원에서 검사</td><td></td></tr>
+<tr><td>323</td><td>927</td><td>경기-43</td><td>2월25일</td><td></td><td>35</td><td>여</td><td>안양</td><td>경기도의료원 파주병원 퇴원 (3월4일)</td><td></td><td>유증상자</td><td></td></tr>
+<tr><td>324</td><td>893</td><td>경기-42</td><td>2월25일</td><td></td><td>26</td><td>남</td><td>성남</td><td>명지병원</td><td></td><td>2.16 신천지 대구교회 방문</td><td></td></tr>
+<tr><td>325</td><td></td><td>경기-41</td><td>2월24일</td><td></td><td>36</td><td>남</td><td>김포</td><td>경기도의료원 이천병원</td><td></td><td>유증상자, 서울 마포구 보건소에서 검사</td><td></td></tr>
+<tr><td>326</td><td>1155</td><td>경기-40</td><td>2월24일</td><td></td><td>56</td><td>여</td><td>부천</td><td>경기도의료원 이천병원</td><td></td><td>원인 불명 폐렴으로 내원</td><td></td></tr>
+<tr><td>327</td><td>875</td><td>경기-39</td><td>2월24일</td><td></td><td>36</td><td>남</td><td>남양주</td><td>명지병원 (2월25일 사망)</td><td></td><td>식도 정맥류 출혈로 내원(몽골인)</td><td></td></tr>
+<tr><td>328</td><td>798</td><td>경기-38</td><td>2월24일</td><td></td><td>35</td><td>여</td><td>안양</td><td>경기도의료원 안성병원</td><td></td><td>2.16 신천지 과천 집회 참석, 경기-37번 확진자의 배우자</td><td></td></tr>
+<tr><td>329</td><td>835</td><td>경기-37</td><td>2월24일</td><td></td><td>34</td><td>남</td><td>안양</td><td>경기도의료원 안성병원</td><td></td><td>2.16 신천지 과천 집회 참석</td><td></td></tr>
+<tr><td>330</td><td>753</td><td>경기-36</td><td>2월24일</td><td></td><td>35</td><td>남</td><td>부천</td><td>명지병원</td><td></td><td>2.15~16 대구 방문</td><td></td></tr>
+<tr><td>331</td><td>762</td><td>경기-35</td><td>2월24일</td><td></td><td>35</td><td>남</td><td>파주</td><td>경기도의료원 수원병원</td><td></td><td>2.16 대구 결혼식 참석, 확진자와 접촉</td><td></td></tr>
+<tr><td>332</td><td>761</td><td>경기-34</td><td>2월24일</td><td></td><td>65</td><td>여</td><td>파주</td><td>경기도의료원 수원병원</td><td></td><td>강릉 확진자의 장모</td><td></td></tr>
+<tr><td>333</td><td>760</td><td>경기-33</td><td>2월24일</td><td></td><td>34</td><td>남</td><td>수원</td><td>경기도의료원 수원병원</td><td></td><td>수원 확진자의 자녀</td><td></td></tr>
+<tr><td>334</td><td>653</td><td>경기-32</td><td>2월23일</td><td></td><td>23</td><td>남</td><td>포천</td><td>경기도의료원 이천병원</td><td></td><td>경기-18번(전국 361번) 확진자와 접촉</td><td></td></tr>
+<tr><td>335</td><td>651</td><td>경기-31</td><td>2월23일</td><td></td><td>22</td><td>남</td><td>포천</td><td>경기도의료원 이천병원</td><td></td><td>경기-18번(전국 361번) 확진자와 접촉</td><td></td></tr>
+<tr><td>336</td><td>652</td><td>경기-30</td><td>2월23일</td><td></td><td>25</td><td>남</td><td>포천</td><td>경기도의료원 안성병원</td><td></td><td>경기-18번(전국 361번) 확진자와 접촉</td><td></td></tr>
+<tr><td>337</td><td>433</td><td>경기-29</td><td>2월23일</td><td></td><td>66</td><td>여</td><td>수원</td><td>국군수도병원</td><td></td><td>대구 거주자</td><td></td></tr>
+<tr><td>338</td><td>610</td><td>경기-28</td><td>2월23일</td><td></td><td>27</td><td>여</td><td>용인</td><td>경기도의료원 수원병원</td><td></td><td>전국 31번 확진자와 접촉</td><td></td></tr>
+<tr><td>339</td><td>647</td><td>경기-27</td><td>2월23일</td><td></td><td>2</td><td>여</td><td>김포</td><td>성남의료원</td><td></td><td>경기-13번(전국 140번),경기-14번(전국 162번) 확진자의 자녀</td><td></td></tr>
+<tr><td>340</td><td>488</td><td>경기-26</td><td>2월23일</td><td></td><td>52</td><td>여</td><td>부천</td><td>경기도의료원 수원병원</td><td></td><td>전국 347번 확진자와 접촉</td><td></td></tr>
+<tr><td>341</td><td>392</td><td>경기-25</td><td>2월23일</td><td></td><td>54</td><td>남</td><td>김포</td><td>경기도의료원 이천병원</td><td></td><td>대구 거주자</td><td></td></tr>
+<tr><td>342</td><td>649</td><td>경기-24</td><td>2월23일</td><td></td><td>67</td><td>남</td><td>수원</td><td>국군수도병원</td><td></td><td>대구 거주자</td><td></td></tr>
+<tr><td>343</td><td>565</td><td>경기-23</td><td>2월23일</td><td></td><td>40</td><td>남</td><td>부천</td><td>경기도의료원 안성병원</td><td></td><td>경기-15번(전국 246번) 확진자의 남편</td><td></td></tr>
+<tr><td>344</td><td>574</td><td>경기-22</td><td>2월23일</td><td></td><td>23</td><td>남</td><td>평택</td><td>경기도의료원 이천병원</td><td></td><td>군인. 2.15-17 대구 방문</td><td></td></tr>
+<tr><td>345</td><td>441</td><td>경기-21</td><td>2월22일</td><td></td><td>61</td><td>여</td><td>부천</td><td>경기도의료원 안성병원</td><td></td><td>전국 246번 확진자의 동거인</td><td></td></tr>
+<tr><td>346</td><td>1244</td><td>경기-20</td><td>2월22일</td><td></td><td>51</td><td>남</td><td>이천</td><td>국군수도병원</td><td></td><td>경기-17번(전국 360번) 확진자와 접촉</td><td></td></tr>
+<tr><td>347</td><td>362</td><td>경기-19</td><td>2월22일</td><td></td><td>64</td><td>남</td><td>안양</td><td>명지병원</td><td></td><td>서울 택시기사, 전국 30번 확진자와 접촉</td><td></td></tr>
+<tr><td>348</td><td>361</td><td>경기-18</td><td>2월22일</td><td></td><td>21</td><td>남</td><td>포천</td><td>경기도의료원 파주병원</td><td></td><td>군인. 2.10-14 대구 방문</td><td></td></tr>
+<tr><td>349</td><td>360</td><td>경기-17</td><td>2월22일</td><td></td><td>61</td><td>남</td><td>이천</td><td>분당서울대병원</td><td></td><td>서울 서초 확진자의 이천 직장 동료</td><td></td></tr>
+<tr><td>350</td><td>347</td><td>경기-16</td><td>2월22일</td><td></td><td>24</td><td>남</td><td>부천</td><td>명지병원</td><td></td><td>싱가포르와 말레이시아 방문, 2.7 입국</td><td></td></tr>
+<tr><td>351</td><td>246</td><td>경기-15</td><td>2월21일</td><td></td><td>37</td><td>여</td><td>부천</td><td>경기도의료원 안성병원</td><td></td><td>전국 31번 확진자와 접촉</td><td></td></tr>
+<tr><td>352</td><td>162</td><td>경기-14</td><td>2월21일</td><td></td><td>33</td><td>남</td><td>김포</td><td>성남의료원</td><td></td><td>전국 140번 확진자의 배우자</td><td></td></tr>
+<tr><td>353</td><td>140</td><td>경기-13</td><td>2월20일</td><td></td><td>32</td><td>여</td><td>김포</td><td>명지병원</td><td></td><td>전국 31번 확진자와 같은 장소에 머무름</td><td></td></tr>
+<tr><td>354</td><td>32</td><td>경기-12</td><td>2월18일</td><td></td><td>11</td><td>여</td><td>수원</td><td>분당서울대병원</td><td></td><td>전국 20번 확진자의 자녀</td><td></td></tr>
+<tr><td>355</td><td>28</td><td>경기-11</td><td>2월10일</td><td></td><td>31</td><td>여</td><td>고양</td><td>명지병원 퇴원 (2월17일)</td><td></td><td>전국 3번 확진자의 밀접 접촉자(중국인)</td><td></td></tr>
+<tr><td>356</td><td>27</td><td>경기-10</td><td>2월9일</td><td></td><td>38</td><td>여</td><td>시흥</td><td>경기도의료원 안성병원</td><td></td><td>전국 25번 확진자의 며느리(중국인)</td><td></td></tr>
+<tr><td>357</td><td>26</td><td>경기-9</td><td>2월9일</td><td></td><td>52</td><td>남</td><td>시흥</td><td>경기도의료원 안성병원</td><td></td><td>경기-8번(전국 25번) 확진자의 아들</td><td></td></tr>
+<tr><td>358</td><td>25</td><td>경기-8</td><td>2월9일</td><td></td><td>74</td><td>여</td><td>시흥</td><td>분당서울대병원</td><td></td><td>경기-9번(전국 26번) 확진자 가족, 2월22일 퇴원 뒤 2월28일 재확진</td><td></td></tr>
+<tr><td>359</td><td>20</td><td>경기-7</td><td>2월5일</td><td></td><td>42</td><td>여</td><td>수원</td><td>분당서울대병원 퇴원 (2월24일)</td><td></td><td>경기-5번(전국 15번) 확진자 밀접 접촉자</td><td></td></tr>
+<tr><td>360</td><td>17</td><td>경기-6</td><td>2월5일</td><td></td><td>38</td><td>남</td><td>구리</td><td>명지병원 퇴원 (2월12일)</td><td></td><td>싱가포르 학회 참석, 1.24. 입국 후 증상 발현</td><td></td></tr>
+<tr><td>361</td><td>15</td><td>경기-5</td><td>2월2일</td><td></td><td>43</td><td>남</td><td>수원</td><td>국군수도병원 퇴원 (2월14일)</td><td></td><td>경기-2번(전국 4번) 확진자와 같은 비행기 탑승</td><td></td></tr>
+<tr><td>362</td><td>14</td><td>경기-4</td><td>2월2일</td><td></td><td>40</td><td>여</td><td>부천</td><td>분당서울대병원 퇴원 (2월18일)</td><td></td><td>경기-3번(전국 12번) 확진자의 부인</td><td></td></tr>
+<tr><td>363</td><td>12</td><td>경기-3</td><td>2월1일</td><td></td><td>49</td><td>남</td><td>부천</td><td>분당서울대병원 퇴원 (2월18일)</td><td></td><td>일본 확진자 접촉한 중국인</td><td></td></tr>
+<tr><td>364</td><td>4</td><td>경기-2</td><td>1월27일</td><td></td><td>56</td><td>남</td><td>평택</td><td>분당서울대병원 퇴원 (2월9일)</td><td></td><td>중국에서 입국 뒤 능동감시</td><td>폐렴</td></tr>
+<tr><td>365</td><td>3</td><td>경기-1</td><td>1월26일</td><td></td><td>54</td><td>남</td><td>고양</td><td>명지병원 퇴원 (2월12일)</td><td></td><td>중국에서 입국 뒤 증상 발현</td><td></td></tr>
+<tr><td>366</td><td></td><td>강원-25</td><td>3월5일</td><td></td><td>46</td><td>남</td><td>원주</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>367</td><td></td><td>강원-24</td><td>3월4일</td><td></td><td>51</td><td>남</td><td>원주</td><td>원주의료원</td><td></td><td>신천지 교회 신자</td><td></td></tr>
+<tr><td>368</td><td></td><td>강원-23</td><td>3월4일</td><td></td><td>66</td><td>남</td><td>원주</td><td>원주의료원</td><td></td><td>강원-9번, 16번, 17번, 21번, 22번 확진자 아파트 근무</td><td></td></tr>
+<tr><td>369</td><td></td><td>강원-22</td><td>3월4일</td><td></td><td>65</td><td>여</td><td>원주</td><td>원주의료원</td><td></td><td>강원-22번 확진자 가족</td><td></td></tr>
+<tr><td>370</td><td></td><td>강원-21</td><td>3월3일</td><td></td><td>71</td><td>남</td><td>원주</td><td>원주세브란스기독병원</td><td></td><td>강원-9번 확진자와 같은 운동시설 이용</td><td></td></tr>
+<tr><td>371</td><td></td><td>강원-20</td><td>3월2일</td><td></td><td>44</td><td>남</td><td>원주</td><td>원주의료원</td><td>353</td><td>강원-7번 확진자와 같은 신천지 교회 신자</td><td></td></tr>
+<tr><td>372</td><td></td><td>강원-19</td><td>3월2일</td><td></td><td>67</td><td>남</td><td>원주</td><td>원주세브란스기독병원</td><td>364</td><td>강원-7번 확진자와 같은 신천지 교회 신자</td><td></td></tr>
+<tr><td>373</td><td></td><td>강원-18</td><td>3월1일</td><td></td><td>57</td><td>여</td><td>원주</td><td>원주의료원</td><td>5</td><td></td><td></td></tr>
+<tr><td>374</td><td></td><td>강원-17</td><td>3월1일</td><td></td><td>26</td><td>여</td><td>원주</td><td>원주세브란스기독병원</td><td>17</td><td>강원-9번 확진자의 가족</td><td></td></tr>
+<tr><td>375</td><td></td><td>강원-16</td><td>3월1일</td><td>2월21일</td><td>54</td><td>여</td><td>원주</td><td>원주의료원</td><td></td><td>강원-9번 확진자의 가족</td><td>가래</td></tr>
+<tr><td>376</td><td>3542</td><td>강원-15</td><td>3월1일</td><td></td><td>20대</td><td>남</td><td>강릉</td><td>삼척의료원</td><td></td><td></td><td></td></tr>
+<tr><td>377</td><td>3541</td><td>강원-14</td><td>3월1일</td><td></td><td>50대</td><td>여</td><td>강릉</td><td>삼척의료원</td><td></td><td></td><td></td></tr>
+<tr><td>378</td><td>3540</td><td>강원-13</td><td>3월1일</td><td></td><td>40대</td><td>남</td><td>강릉</td><td>삼척의료원</td><td></td><td></td><td></td></tr>
+<tr><td>379</td><td>3539</td><td>강원-12</td><td>3월1일</td><td></td><td>20대</td><td>남</td><td>강릉</td><td>삼척의료원</td><td>1</td><td>중국인 유학생</td><td>무증상</td></tr>
+<tr><td>380</td><td></td><td>강원-11</td><td>3월1일</td><td>2월29일</td><td>50</td><td>여</td><td>원주</td><td>원주세브란스기독병원</td><td></td><td>강원-8번 확진자 가족</td><td>몸살 기운</td></tr>
+<tr><td>381</td><td></td><td>강원-10</td><td>3월1일</td><td>2월24일</td><td>67</td><td>남</td><td>원주</td><td>영월의료원</td><td></td><td>강원-7번 확진자와 같은 신천지 교회 신자</td><td>인후통, 기침</td></tr>
+<tr><td>382</td><td></td><td>강원-9</td><td>3월1일</td><td>2월25일</td><td>56</td><td>남</td><td>원주</td><td>영월의료원</td><td></td><td></td><td>목감기</td></tr>
+<tr><td>383</td><td></td><td>강원-8</td><td>2월29일</td><td>2월25일</td><td>57</td><td>남</td><td>원주</td><td>원주의료원</td><td></td><td>강원-7번 확진자와 같은 신천지 교회 신자</td><td>두통, 비염 증상</td></tr>
+<tr><td>384</td><td>2287</td><td>강원-7</td><td>2월27일</td><td></td><td>47</td><td>남</td><td>원주</td><td>강원대병원</td><td>3</td><td>신천지 교회 신자</td><td></td></tr>
+<tr><td>385</td><td>512</td><td>강원-6</td><td>2월22일</td><td></td><td>40대</td><td>남</td><td>강릉</td><td>강원대병원</td><td>3</td><td></td><td></td></tr>
+<tr><td>386</td><td>419</td><td>강원-5</td><td>2월22일</td><td></td><td></td><td>남</td><td>속초</td><td>강릉의료원 퇴원</td><td>14</td><td>2.13-15 충북 단양, 경북 문경 여행</td><td></td></tr>
+<tr><td>387</td><td>397</td><td>강원-4</td><td>2월22일</td><td></td><td></td><td>여</td><td>속초</td><td>강릉의료원 퇴원</td><td>73</td><td></td><td></td></tr>
+<tr><td>388</td><td>366</td><td>강원-3</td><td>2월22일</td><td></td><td></td><td></td><td>삼척</td><td>강릉의료원 퇴원 (3월4일)</td><td>56</td><td></td><td></td></tr>
+<tr><td>389</td><td>374</td><td>강원-2</td><td>2월22일</td><td></td><td>30대</td><td>여</td><td>춘천</td><td>강원대병원</td><td>25</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>390</td><td>373</td><td>강원-1</td><td>2월22일</td><td></td><td>30대</td><td>여</td><td>춘천</td><td>강원대병원</td><td>233</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>391</td><td></td><td>충북-15</td><td>3월5일</td><td></td><td>4</td><td>남</td><td>청주</td><td>자가 격리</td><td></td><td>충북-2번, 3번 확진자의 가족</td><td></td></tr>
+<tr><td>392</td><td></td><td>충북-14</td><td>3월5일</td><td></td><td>57</td><td>여</td><td>청주</td><td>자가 격리</td><td></td><td>충북-2번 확진자의 가족</td><td></td></tr>
+<tr><td>393</td><td></td><td>충북-13</td><td>3월5일</td><td></td><td>58</td><td>남</td><td>청주</td><td>자가 격리</td><td></td><td>충북-2번 확진자의 가족</td><td></td></tr>
+<tr><td>394</td><td></td><td>충북-12</td><td>3월4일</td><td></td><td>82</td><td>여</td><td>괴산</td><td>중앙대병원</td><td></td><td></td><td></td></tr>
+<tr><td>395</td><td></td><td>충북-11</td><td>2월29일</td><td></td><td>25</td><td>남</td><td>청주</td><td>청주의료원</td><td>2</td><td>신천지 대구 확진자 접촉</td><td></td></tr>
+<tr><td>396</td><td></td><td>충북-10</td><td>2월27일</td><td></td><td>23</td><td>남</td><td>청주</td><td>충주의료원</td><td>2</td><td>군인, 충북-8번 확진자 지인</td><td></td></tr>
+<tr><td>397</td><td></td><td>충북-9</td><td>2월27일</td><td></td><td>42</td><td>남</td><td>충주</td><td>국립중앙의료원</td><td>139</td><td>충북-7번 확진자 지인</td><td></td></tr>
+<tr><td>398</td><td></td><td>충북-8</td><td>2월27일</td><td></td><td>23</td><td>남</td><td>청주</td><td>충주의료원</td><td>23</td><td>군인, 대구 방문</td><td></td></tr>
+<tr><td>399</td><td></td><td>충북-7</td><td>2월26일</td><td></td><td>38</td><td>여</td><td>충주</td><td>충주의료원</td><td>160</td><td>조사중</td><td></td></tr>
+<tr><td>400</td><td></td><td>충북-6</td><td>2월25일</td><td></td><td>24</td><td>여</td><td>청주</td><td>충주의료원 퇴원 (3월4일)</td><td>176</td><td>조사중</td><td></td></tr>
+<tr><td>401</td><td></td><td>충북-5</td><td>2월25일</td><td></td><td>35</td><td>여</td><td>충주</td><td>충주의료원</td><td>288</td><td>조사중</td><td></td></tr>
+<tr><td>402</td><td></td><td>충북-4</td><td>2월25일</td><td></td><td>51</td><td>남</td><td>음성</td><td>청주대병원</td><td>3</td><td>공사현장 확진자 접촉</td><td></td></tr>
+<tr><td>403</td><td></td><td>충북-3</td><td>2월22일</td><td></td><td>35</td><td>여</td><td>청주</td><td>청주의료원</td><td>316</td><td>전주 확진자 접촉</td><td></td></tr>
+<tr><td>404</td><td></td><td>충북-2</td><td>2월22일</td><td></td><td>36</td><td>남</td><td>청주</td><td>청주의료원</td><td>316</td><td>전주 확진자 접촉</td><td></td></tr>
+<tr><td>405</td><td></td><td>충북-1</td><td>2월20일</td><td></td><td>31</td><td>남</td><td>증평</td><td>국군수도병원</td><td>52</td><td>군인, 신천지 대구교회 방문자 접촉</td><td></td></tr>
+<tr><td>406</td><td></td><td>충남-89</td><td>3월5일</td><td></td><td>25</td><td>여</td><td>천안</td><td></td><td></td><td></td><td>무증상</td></tr>
+<tr><td>407</td><td></td><td>충남-88</td><td>3월5일</td><td>2월28일</td><td>6</td><td>여</td><td>천안</td><td>홍성의료원</td><td></td><td>충남-84번 86번 87번 확진자 가족</td><td>발열</td></tr>
+<tr><td>408</td><td></td><td>충남-87</td><td>3월5일</td><td>2월28일</td><td>12</td><td>남</td><td>천안</td><td>홍성의료원</td><td></td><td>충남-84번 86번 88번 확진자 가족</td><td>발열</td></tr>
+<tr><td>409</td><td></td><td>충남-86</td><td>3월5일</td><td>2월23일</td><td>39</td><td>여</td><td>천안</td><td>홍성의료원</td><td></td><td>충남-59번 확진자의 강습 수강생, 충남-84번 확진자 가족</td><td>발열</td></tr>
+<tr><td>410</td><td></td><td>충남-85</td><td>3월4일</td><td></td><td>48</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-59번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>411</td><td></td><td>충남-84</td><td>3월4일</td><td>2월25일</td><td>39</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-78번 79번 80번 확진자 가족</td><td>인후통</td></tr>
+<tr><td>412</td><td></td><td>충남-83</td><td>3월4일</td><td>2월23일</td><td>23</td><td>여</td><td>천안</td><td>천안의료원</td><td>8</td><td>충남-6번 확진자의 강습 수강생</td><td>근육통, 오한</td></tr>
+<tr><td>413</td><td></td><td>충남-82</td><td>3월3일</td><td>2월24일</td><td>54</td><td>여</td><td>천안</td><td>천안의료원</td><td>14</td><td>충남-8번 확진자의 강습 수강생</td><td>인후통, 가래</td></tr>
+<tr><td>414</td><td></td><td>충남-81</td><td>3월3일</td><td>2월28일</td><td>53</td><td>여</td><td>천안</td><td>천안의료원</td><td>1</td><td></td><td>기침, 가래</td></tr>
+<tr><td>415</td><td></td><td>충남-80</td><td>3월2일</td><td></td><td>52</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-74번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>416</td><td></td><td>충남-79</td><td>3월2일</td><td>3월1일</td><td>2</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-76번 확진자 가족</td><td>발열</td></tr>
+<tr><td>417</td><td></td><td>충남-78</td><td>3월2일</td><td></td><td>19</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-18번 49번 확진자와 함께 근무</td><td>무증상</td></tr>
+<tr><td>418</td><td></td><td>충남-77</td><td>3월1일</td><td></td><td>47</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>419</td><td></td><td>충남-76</td><td>3월1일</td><td>2월23일</td><td>33</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-22번 확진자와 접촉</td><td>인후통, 감기 기운</td></tr>
+<tr><td>420</td><td></td><td>충남-75</td><td>3월1일</td><td>2월29일</td><td>21</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-33번 확진자 가족</td><td>호흡 가뿜, 코막힘</td></tr>
+<tr><td>421</td><td></td><td>충남-74</td><td>3월1일</td><td>2월24일</td><td>52</td><td>여</td><td>천안</td><td>천안의료원</td><td>14</td><td>충남-6번 확진자의 강습 수강생</td><td>인후통, 근육통</td></tr>
+<tr><td>422</td><td></td><td>충남-73</td><td>3월1일</td><td>2월28일</td><td>46</td><td>남</td><td>천안</td><td>천안의료원</td><td>7</td><td>충남-39번 확진자 가족</td><td>발열</td></tr>
+<tr><td>423</td><td></td><td>충남-72</td><td>3월1일</td><td></td><td>8</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-58번 49번 22번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>424</td><td></td><td>충남-71</td><td>3월1일</td><td>2월25일</td><td>34</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-22번 확진자 접촉, 충남-67번 확진자 가족</td><td>인후통</td></tr>
+<tr><td>425</td><td></td><td>충남-70</td><td>3월1일</td><td></td><td>13</td><td>남</td><td>천안</td><td>홍성의료원</td><td></td><td>충남-52번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>426</td><td></td><td>충남-69</td><td>3월1일</td><td>2월29일</td><td>48</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-6번 확진자의 강습 수강생</td><td>인후통</td></tr>
+<tr><td>427</td><td></td><td>충남-68</td><td>3월1일</td><td></td><td>48</td><td>남</td><td>천안</td><td>천안의료원</td><td>3</td><td>충남-64번 77번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>428</td><td></td><td>충남-67</td><td>3월1일</td><td>2월27일</td><td>36</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-66번 71번 확진자 가족</td><td>인후통, 어지러움</td></tr>
+<tr><td>429</td><td></td><td>충남-66</td><td>3월1일</td><td></td><td>60</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-67번 71번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>430</td><td></td><td>충남-65</td><td>3월1일</td><td></td><td>2</td><td>남</td><td>천안</td><td>단국대병원</td><td>1</td><td>충남-32번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>431</td><td></td><td>충남-64</td><td>3월1일</td><td></td><td>13</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-68번 77번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>432</td><td></td><td>충남-63</td><td>2월29일</td><td>2월22일</td><td>41</td><td>여</td><td>천안</td><td>천안의료원</td><td>5</td><td>충남-6번 확진자의 강습 수강생</td><td>발열, 두통, 구토감</td></tr>
+<tr><td>433</td><td></td><td>충남-62</td><td>2월29일</td><td>2월26일</td><td>35</td><td>여</td><td>아산</td><td>천안의료원</td><td>27</td><td></td><td>발열, 근육통, 두통</td></tr>
+<tr><td>434</td><td></td><td>충남-61</td><td>2월29일</td><td>2월25일</td><td>13</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-59번 확진자 자녀</td><td>발열, 콧물</td></tr>
+<tr><td>435</td><td></td><td>충남-60</td><td>2월29일</td><td>2월26일</td><td>14</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-59번 확진자 자녀</td><td>초기 감기</td></tr>
+<tr><td>436</td><td></td><td>충남-59</td><td>2월29일</td><td></td><td>43</td><td>여</td><td>천안</td><td>천안의료원</td><td>4</td><td>충남-6번 확진자 접촉 추정</td><td>무증상</td></tr>
+<tr><td>437</td><td></td><td>충남-58</td><td>2월29일</td><td>2월25일</td><td>13</td><td>남</td><td>천안</td><td>천안의료원</td><td>10</td><td>충남-49번 확진자 가족</td><td>인후통, 콧물</td></tr>
+<tr><td>438</td><td></td><td>충남-57</td><td>2월29일</td><td></td><td>18</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-29번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>439</td><td></td><td>충남-56</td><td>2월29일</td><td></td><td>48</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-24번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>440</td><td></td><td>충남-55</td><td>2월29일</td><td></td><td>23</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-8번 확진자 접촉</td><td>무증상</td></tr>
+<tr><td>441</td><td></td><td>충남-54</td><td>2월29일</td><td></td><td>51</td><td>여</td><td>천안</td><td>천안의료원</td><td>1</td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>442</td><td></td><td>충남-53</td><td>2월29일</td><td></td><td>61</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>443</td><td></td><td>충남-52</td><td>2월29일</td><td>2월27일</td><td>42</td><td>여</td><td>천안</td><td>홍성의료원</td><td>7</td><td></td><td>기침, 콧물, 가래</td></tr>
+<tr><td>444</td><td></td><td>충남-51</td><td>2월29일</td><td>2월25일</td><td>61</td><td>여</td><td>천안</td><td>천안의료원</td><td>5</td><td></td><td>기침, 가래</td></tr>
+<tr><td>445</td><td></td><td>충남-50</td><td>2월29일</td><td>2월27일</td><td>29</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-6번 확진자의 강습 수강생</td><td>기침, 가래, 발열</td></tr>
+<tr><td>446</td><td></td><td>충남-49</td><td>2월29일</td><td></td><td>37</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-22번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>447</td><td></td><td>충남-48</td><td>2월29일</td><td></td><td>13</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-37번 47번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>448</td><td></td><td>충남-47</td><td>2월29일</td><td></td><td>42</td><td>남</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-37번 확진자 가족</td><td>무증상</td></tr>
+<tr><td>449</td><td></td><td>충남-46</td><td>2월28일</td><td></td><td>49</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>450</td><td></td><td>충남-45</td><td>2월28일</td><td></td><td>48</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>451</td><td></td><td>충남-44</td><td>2월28일</td><td>2월25일</td><td>65</td><td>여</td><td>천안</td><td>천안의료원</td><td>2</td><td></td><td>발열, 근육통</td></tr>
+<tr><td>452</td><td></td><td>충남-43</td><td>2월28일</td><td></td><td>39</td><td>여</td><td>아산</td><td>천안의료원</td><td>10</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>453</td><td></td><td>충남-42</td><td>2월28일</td><td></td><td>33</td><td>여</td><td>아산</td><td>천안의료원</td><td>5</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>454</td><td></td><td>충남-41</td><td>2월28일</td><td></td><td>41</td><td>여</td><td>천안</td><td>천안의료원</td><td>1</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>455</td><td></td><td>충남-40</td><td>2월28일</td><td>2월27일</td><td>38</td><td>여</td><td>천안</td><td>천안의료원</td><td></td><td>충남-12번 확진자 접촉</td><td>콧물, 인후통</td></tr>
+<tr><td>456</td><td></td><td>충남-39</td><td>2월28일</td><td>2월23일</td><td>45</td><td>여</td><td>천안</td><td>천안의료원</td><td>106</td><td>충남-8번 확진자의 강습 수강생</td><td>인후통</td></tr>
+<tr><td>457</td><td></td><td>충남-38</td><td>2월28일</td><td></td><td>43</td><td>여</td><td>아산</td><td></td><td>0</td><td>천안 휘트니스센터 수강</td><td>무증상</td></tr>
+<tr><td>458</td><td></td><td>충남-37</td><td>2월28일</td><td></td><td>39</td><td>여</td><td>천안</td><td>단국대병원</td><td>7</td><td>충남-8번 확진자의 강습 수강생</td><td></td></tr>
+<tr><td>459</td><td></td><td>충남-36</td><td>2월28일</td><td>2월27일</td><td>40</td><td>여</td><td>아산</td><td>서산의료원</td><td>8</td><td>충남-6번 확진자와 접촉</td><td>콧물</td></tr>
+<tr><td>460</td><td></td><td>충남-35</td><td>2월28일</td><td>2월23일</td><td>47</td><td>여</td><td>천안</td><td>단국대병원</td><td>23</td><td>충남-6번 확진자의 강습 수강생</td><td>기침</td></tr>
+<tr><td>461</td><td></td><td>충남-34</td><td>2월28일</td><td>2월27일</td><td>45</td><td>여</td><td>천안</td><td>천안의료원</td><td>15</td><td>충남-6번 확진자의 강습 수강생</td><td>콧물</td></tr>
+<tr><td>462</td><td></td><td>충남-33</td><td>2월28일</td><td>2월23일</td><td>49</td><td>여</td><td>천안</td><td>천안의료원</td><td>5</td><td>충남-6번 확진자의 강습 수강생</td><td>근육통, 인후통</td></tr>
+<tr><td>463</td><td></td><td>충남-32</td><td>2월28일</td><td>2월25일</td><td>38</td><td>여</td><td>천안</td><td>단국대병원</td><td>6</td><td>충남-8번 확진자의 강습 수강생</td><td>목이 간질거림</td></tr>
+<tr><td>464</td><td></td><td>충남-31</td><td>2월28일</td><td></td><td>43</td><td>여</td><td>천안</td><td>순천향대병원</td><td>0</td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>465</td><td></td><td>충남-30</td><td>2월28일</td><td></td><td>54</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>466</td><td></td><td>충남-29</td><td>2월28일</td><td>2월25일</td><td>45</td><td>여</td><td>천안</td><td>공주의료원</td><td>2</td><td>충남-8번 확진자의 강습 수강생</td><td>두통</td></tr>
+<tr><td>467</td><td></td><td>충남-28</td><td>2월28일</td><td>2월27일</td><td>41</td><td>여</td><td>천안</td><td>천안의료원</td><td>53</td><td>충남-8번 확진자의 강습 수강생</td><td>기타 증상</td></tr>
+<tr><td>468</td><td></td><td>충남-27</td><td>2월28일</td><td>2월22일</td><td>39</td><td>여</td><td>천안</td><td>천안의료원</td><td>2</td><td>충남-8번 확진자의 강습 수강생</td><td>발열, 근육통</td></tr>
+<tr><td>469</td><td></td><td>충남-26</td><td>2월28일</td><td>2월22일</td><td>61</td><td>여</td><td>천안</td><td>순천향대병원</td><td>11</td><td>충남-8번 확진자의 강습 수강생</td><td>두통</td></tr>
+<tr><td>470</td><td></td><td>충남-25</td><td>2월28일</td><td></td><td>49</td><td>여</td><td>천안</td><td>천안의료원</td><td>0</td><td>충남-6번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>471</td><td></td><td>충남-24</td><td>2월27일</td><td>2월27일</td><td>49</td><td>여</td><td>천안</td><td>천안의료원</td><td>24</td><td>충남-8번 확진자의 강습 수강생</td><td>인후통</td></tr>
+<tr><td>472</td><td></td><td>충남-23</td><td>2월28일</td><td>2월22일</td><td>51</td><td>여</td><td>천안</td><td>순천향대병원</td><td>3</td><td>충남-8번 확진자의 강습 수강생</td><td>기침, 콧물</td></tr>
+<tr><td>473</td><td></td><td>충남-22</td><td>2월28일</td><td>2월22일</td><td>38</td><td>여</td><td>천안</td><td>천안의료원</td><td>2</td><td>충남-8번 확진자의 강습 수강생</td><td>콧물</td></tr>
+<tr><td>474</td><td></td><td>충남-21</td><td>2월28일</td><td>2월27일</td><td>31</td><td>남</td><td>천안</td><td>천안의료원</td><td></td><td>충남-11번 확진자 가족</td><td>발열, 기침</td></tr>
+<tr><td>475</td><td></td><td>충남-20</td><td>2월28일</td><td>2월21일</td><td>40</td><td>여</td><td>천안</td><td>천안의료원</td><td>1</td><td>충남-6번 확진자의 강습 수강생</td><td>근육통, 인후통</td></tr>
+<tr><td>476</td><td></td><td>충남-19</td><td>2월27일</td><td>2월24일</td><td>41</td><td>여</td><td>천안</td><td>서산의료원</td><td>2</td><td>충남-8번 확진자의 강습 수강생</td><td>발열, 가래</td></tr>
+<tr><td>477</td><td></td><td>충남-18</td><td>2월27일</td><td>2월27일</td><td>30</td><td>남</td><td>천안</td><td>공주의료원</td><td>51</td><td>충남-49번 79번 확진자와 함께 근무</td><td>발열</td></tr>
+<tr><td>478</td><td></td><td>충남-17</td><td>2월27일</td><td>2월26일</td><td>40</td><td>여</td><td>천안</td><td>서산의료원</td><td>15</td><td>충남-8번 확진자의 강습 수강생</td><td>발열</td></tr>
+<tr><td>479</td><td></td><td>충남-16</td><td>2월27일</td><td></td><td>46</td><td>여</td><td>천안</td><td>순천향대병원</td><td></td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>480</td><td></td><td>충남-15</td><td>2월27일</td><td></td><td>43</td><td>여</td><td>천안</td><td>순천향대병원</td><td></td><td>충남-8번 확진자의 강습 수강생</td><td>무증상</td></tr>
+<tr><td>481</td><td></td><td>충남-14</td><td>2월27일</td><td></td><td>45</td><td>남</td><td>천안</td><td>공주의료원</td><td></td><td>충남-13번 확진자 가족</td><td></td></tr>
+<tr><td>482</td><td></td><td>충남-13</td><td>2월27일</td><td>2월22일</td><td>43</td><td>여</td><td>천안</td><td>천안의료원</td><td>10</td><td>충남-8번 확진자의 강습 수강생</td><td>간헐적 헛기침</td></tr>
+<tr><td>483</td><td></td><td>충남-12</td><td>2월27일</td><td>2월24일</td><td>53</td><td>여</td><td>천안</td><td>서산의료원</td><td>5</td><td>충남-8번 확진자 접촉</td><td>미열,인후통</td></tr>
+<tr><td>484</td><td></td><td>충남-11</td><td>2월27일</td><td>2월22일</td><td>31</td><td>여</td><td>천안</td><td>홍성의료원</td><td>31</td><td>충남-8번 확진자의 강습 수강생</td><td>기침,인후통</td></tr>
+<tr><td>485</td><td></td><td>충남-10</td><td>2월27일</td><td>2월25일</td><td>49</td><td>여</td><td>천안</td><td>서산의료원</td><td>2</td><td>충남-8번 확진자의 강습 수강생</td><td>두통,오한</td></tr>
+<tr><td>486</td><td></td><td>충남-9</td><td>2월26일</td><td>2월23일</td><td>38</td><td>여</td><td>천안</td><td>천안의료원</td><td>3</td><td>충남-8번 확진자의 강습 수강생</td><td>발열, 오한, 근육통</td></tr>
+<tr><td>487</td><td></td><td>충남-8</td><td>2월26일</td><td>2월20일</td><td>46</td><td>여</td><td>천안</td><td>천안의료원</td><td>130</td><td>줌바 댄스 강사</td><td>발열, 목 간지러움</td></tr>
+<tr><td>488</td><td></td><td>충남-7</td><td>2월26일</td><td>2월22일</td><td>45</td><td>남</td><td>아산</td><td>천안의료원</td><td>53</td><td>충남-6번 확진자 가족</td><td>발열, 두통</td></tr>
+<tr><td>489</td><td></td><td>충남-6</td><td>2월26일</td><td>2월24일</td><td>42</td><td>여</td><td>아산</td><td>천안의료원</td><td>43</td><td>충남-7번 확진자 가족</td><td>발열, 기침, 근육통</td></tr>
+<tr><td>490</td><td></td><td>충남-5</td><td>2월26일</td><td>2월23일</td><td>44</td><td>여</td><td>천안</td><td>천안의료원</td><td>9</td><td>충남-8번 확진자의 강습 수강생</td><td>발열, 근육통</td></tr>
+<tr><td>491</td><td></td><td>충남-4</td><td>2월25일</td><td>2월24일</td><td>47</td><td>여</td><td>천안</td><td>단국대병원</td><td>6</td><td>충남-6번 확진자의 강습 수강생</td><td>발열, 오한, 근육통</td></tr>
+<tr><td>492</td><td></td><td>충남-3</td><td>2월25일</td><td>2월24일</td><td>50</td><td>여</td><td>천안</td><td>단국대병원</td><td>4</td><td>충남-8번 확진자 접촉</td><td>발열, 기침, 근육통</td></tr>
+<tr><td>493</td><td></td><td>충남-2</td><td>2월25일</td><td>2월24일</td><td>47</td><td>여</td><td>천안</td><td>단국대병원</td><td>36</td><td>충남-8번 확진자의 강습 수강생</td><td>발열</td></tr>
+<tr><td>494</td><td></td><td>충남-1</td><td>2월21일</td><td>2월18일</td><td>25</td><td>남</td><td>대구</td><td>국군수도병원</td><td>82</td><td>군인</td><td>발열, 오한, 근육통</td></tr>
+<tr><td>496</td><td></td><td>전북-7</td><td>3월2일</td><td>2월28일</td><td>26</td><td>여</td><td>전주</td><td>군산의료원</td><td>4</td><td>신천지 전주교회 2월16일 예배</td><td>발열</td></tr>
+<tr><td>497</td><td></td><td>전북-6</td><td>2월29일</td><td></td><td></td><td></td><td></td><td>군산의료원</td><td></td><td></td><td></td></tr>
+<tr><td>498</td><td></td><td>전북-5</td><td>2월27일</td><td></td><td>73</td><td>남</td><td></td><td>전북대병원</td><td></td><td>1753번 남편</td><td></td></tr>
+<tr><td>499</td><td></td><td>전북-4</td><td>2월26일</td><td></td><td>70</td><td>여</td><td></td><td>원광대병원</td><td></td><td>1753번 확진자</td><td></td></tr>
+<tr><td>500</td><td></td><td>전북-3</td><td>2월21일</td><td></td><td>36</td><td>남</td><td>김제</td><td>원광대병원</td><td></td><td>230번 환자, 113번 확진자 동료</td><td></td></tr>
+<tr><td>501</td><td></td><td>전북-2</td><td>2월20일</td><td></td><td>28</td><td>남</td><td>김제</td><td></td><td></td><td>113번 확진자, 대구 여행</td><td></td></tr>
+<tr><td>502</td><td></td><td>전북-1</td><td>1월31일</td><td></td><td>62</td><td>여</td><td>군산</td><td>군산의료원</td><td></td><td>중국 우한 방문</td><td></td></tr>
+<tr><td>504</td><td></td><td>전남-4</td><td>3월1일</td><td></td><td>36</td><td>여</td><td>광양</td><td>순천의료원</td><td>3</td><td>울산-19번, 20번 확진자 가족</td><td></td></tr>
+<tr><td>505</td><td></td><td>전남-3</td><td>2월29일</td><td></td><td>22</td><td>남</td><td>여수</td><td>순천의료원</td><td>23</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>506</td><td></td><td>전남-2</td><td>2월28일</td><td></td><td>25</td><td>여</td><td>순천</td><td>전남대병원</td><td>14</td><td>대구 방문 추정</td><td></td></tr>
+<tr><td>507</td><td></td><td>전남-1</td><td>2월6일</td><td></td><td>46</td><td>남</td><td>나주</td><td>조선대병원 퇴원 (2월25일)</td><td>1</td><td>22번 확진자, 16번 확진자 가족</td><td></td></tr>
+<tr><td>508</td><td></td><td>경남-74</td><td>3월4일</td><td></td><td>37</td><td>여</td><td>창원</td><td>양산부산대병원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>509</td><td></td><td>경남-73</td><td>3월4일</td><td></td><td>63</td><td>여</td><td>밀양</td><td>양산부산대병원</td><td></td><td>기차에서 경북 유증상자 접촉</td><td></td></tr>
+<tr><td>510</td><td></td><td>경남-72</td><td>3월4일</td><td></td><td>66</td><td>여</td><td>창녕</td><td>마산의료원</td><td></td><td>조사중</td><td></td></tr>
+<tr><td>511</td><td></td><td>경남-71</td><td>3월4일</td><td></td><td>16</td><td>여</td><td>창녕</td><td>마산의료원</td><td></td><td>창녕 노래방 방문</td><td></td></tr>
+<tr><td>512</td><td></td><td>경남-70</td><td>3월4일</td><td></td><td>24</td><td>남</td><td>창녕</td><td>마산의료원</td><td></td><td>창녕 노래방 방문</td><td></td></tr>
+<tr><td>513</td><td></td><td>경남-69</td><td>3월4일</td><td></td><td>60</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>514</td><td></td><td>경남-68</td><td>3월4일</td><td></td><td>63</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>515</td><td></td><td>경남-67</td><td>3월4일</td><td></td><td>62</td><td>남</td><td>거창</td><td>마산의료원</td><td></td><td>경남-66번 확진자 남편</td><td></td></tr>
+<tr><td>516</td><td></td><td>경남-66</td><td>3월3일</td><td></td><td>58</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>경남-69번 확진자 접촉</td><td></td></tr>
+<tr><td>517</td><td></td><td>경남-65</td><td>3월3일</td><td></td><td>21</td><td>여</td><td>거제</td><td>마산의료원</td><td></td><td>신천지 관련</td><td></td></tr>
+<tr><td>518</td><td></td><td>경남-64</td><td>3월2일</td><td></td><td>20</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>신천지 교육센터 방문</td><td></td></tr>
+<tr><td>519</td><td></td><td>경남-63</td><td>3월1일</td><td></td><td>20</td><td>여</td><td>고성</td><td>마산의료원</td><td></td><td>신천지 관련 시설 방문</td><td></td></tr>
+<tr><td>520</td><td></td><td>경남-62</td><td>3월1일</td><td></td><td>21</td><td>여</td><td>창원</td><td>마산의료원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>521</td><td></td><td>경남-61</td><td>2월29일</td><td></td><td>30</td><td>남</td><td>창녕</td><td>마산의료원</td><td></td><td>창녕 노래방 방문</td><td></td></tr>
+<tr><td>522</td><td></td><td>경남-60</td><td>2월28일</td><td></td><td>54</td><td>남</td><td>김해</td><td>마산의료원</td><td></td><td>대구 방문</td><td></td></tr>
+<tr><td>523</td><td></td><td>경남-59</td><td>2월28일</td><td></td><td>54</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>경남-35번 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>524</td><td></td><td>경남-58</td><td>2월28일</td><td></td><td>55</td><td>남</td><td>거창</td><td>마산의료원</td><td></td><td>경북 안동 확진자(384번)의 아버지, 거창교회 관련</td><td></td></tr>
+<tr><td>525</td><td></td><td>경남-57</td><td>2월28일</td><td></td><td>65</td><td>남</td><td>거창</td><td>마산의료원</td><td></td><td>경북 안동 확진자(384번) 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>526</td><td></td><td>경남-56</td><td>2월28일</td><td></td><td>30</td><td>남</td><td>창녕</td><td>마산의료원</td><td></td><td>창녕 노래방 방문</td><td></td></tr>
+<tr><td>527</td><td></td><td>경남-55</td><td>2월28일</td><td></td><td>20</td><td>여</td><td>밀양</td><td>마산의료원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>528</td><td></td><td>경남-54</td><td>2월28일</td><td></td><td>69</td><td>남</td><td>거창</td><td>마산의료원</td><td></td><td>경남-36번 확진자 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>529</td><td></td><td>경남-53</td><td>2월28일</td><td></td><td>52</td><td>남</td><td>거제</td><td>마산의료원</td><td></td><td>대구에서 온 가족(의사환자) 접촉</td><td></td></tr>
+<tr><td>530</td><td></td><td>경남-52</td><td>2월28일</td><td></td><td>69</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>경남-36번 확진자 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>531</td><td></td><td>경남-51</td><td>2월28일</td><td></td><td>61</td><td>여</td><td>창녕</td><td>마산의료원</td><td></td><td>창녕 노래방 방문</td><td></td></tr>
+<tr><td>532</td><td></td><td>경남-50</td><td>2월28일</td><td></td><td>5</td><td>남</td><td>밀양</td><td>마산의료원</td><td></td><td>경남-49번 확진자 접촉</td><td></td></tr>
+<tr><td>533</td><td></td><td>경남-49</td><td>2월28일</td><td></td><td>64</td><td>여</td><td>밀양</td><td>마산의료원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>534</td><td></td><td>경남-48</td><td>2월27일</td><td></td><td>45</td><td>여</td><td>거창</td><td>마산의료원</td><td></td><td>경남-47번 배우자 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>535</td><td></td><td>경남-47</td><td>2월27일</td><td></td><td>49</td><td>남</td><td>거창</td><td>마산의료원</td><td></td><td>경북 안동 확진자 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>536</td><td></td><td>경남-46</td><td>2월27일</td><td></td><td>59</td><td>여</td><td>김해</td><td>마산의료원</td><td></td><td>경남-20번 21번 확진자 접촉</td><td></td></tr>
+<tr><td>537</td><td></td><td>경남-45</td><td>2월27일</td><td></td><td>42</td><td>여</td><td>창원</td><td>마산의료원</td><td></td><td>경남-5번 확진자 접촉</td><td></td></tr>
+<tr><td>538</td><td></td><td>경남-44</td><td>2월27일</td><td></td><td>44</td><td>여</td><td>창원</td><td>마산의료원</td><td></td><td>경남-5번 확진자 접촉</td><td></td></tr>
+<tr><td>539</td><td></td><td>경남-43</td><td>2월26일</td><td></td><td>24</td><td>남</td><td>김해</td><td>마산의료원</td><td></td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>540</td><td></td><td>경남-42</td><td>2월26일</td><td></td><td>41</td><td>남</td><td>창원</td><td>창원경상대병원</td><td></td><td>경남-5번 12번 확진자 접촉</td><td></td></tr>
+<tr><td>541</td><td></td><td>경남-41</td><td>2월26일</td><td></td><td>35</td><td>남</td><td>밀양</td><td>마산의료원</td><td></td><td>경남-49번 확진자 접촉</td><td></td></tr>
+<tr><td>542</td><td></td><td>경남-40</td><td>2월26일</td><td></td><td>56</td><td>남</td><td>창원</td><td>마산의료원</td><td></td><td>경남-28번 확진자 접촉</td><td></td></tr>
+<tr><td>543</td><td></td><td>경남-39</td><td>2월26일</td><td></td><td>65</td><td>여</td><td>김해</td><td>마산의료원</td><td>0</td><td>경북 영천 확진자 접촉</td><td></td></tr>
+<tr><td>544</td><td>1237</td><td>경남-38</td><td>2월26일</td><td></td><td>59</td><td>여</td><td>창녕</td><td>마산의료원</td><td>0</td><td>대구 방문</td><td></td></tr>
+<tr><td>545</td><td>1236</td><td>경남-37</td><td>2월26일</td><td></td><td>53</td><td>여</td><td>창원</td><td>마산의료원</td><td>2</td><td>경남-5번 확진자 접촉</td><td></td></tr>
+<tr><td>546</td><td>1240</td><td>경남-36</td><td>2월26일</td><td></td><td>66</td><td>여</td><td>거창</td><td>마산의료원</td><td>1</td><td>경북 안동 확진자(384번) 접촉, 거창교회 관련 접촉자 접촉</td><td></td></tr>
+<tr><td>547</td><td>1234</td><td>경남-35</td><td>2월26일</td><td></td><td>45</td><td>여</td><td>거창</td><td>마산의료원</td><td>9</td><td>경북 안동 확진자(384번) 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>548</td><td>1233</td><td>경남-34</td><td>2월26일</td><td></td><td>20</td><td>여</td><td>거창</td><td>마산의료원</td><td>9</td><td>경북 안동 확진자(384번) 접촉, 거창교회 관련</td><td></td></tr>
+<tr><td>549</td><td>1226</td><td>경남-30</td><td>2월26일</td><td></td><td>21</td><td>남</td><td>창원</td><td>마산의료원</td><td>0</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>550</td><td>1225</td><td>경남-29</td><td>2월26일</td><td></td><td>16</td><td>남</td><td>창원</td><td>마산의료원</td><td>6</td><td>경남-5번 7번 가족</td><td></td></tr>
+<tr><td>551</td><td>1178</td><td>경남-28</td><td>2월25일</td><td></td><td>22</td><td>여</td><td>창원</td><td>마산의료원</td><td>0</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>552</td><td>987</td><td>경남-27</td><td>2월25일</td><td></td><td>21</td><td>여</td><td>거제</td><td>마산의료원</td><td>7</td><td>대구 확진자 접촉</td><td></td></tr>
+<tr><td>553</td><td></td><td>경남-26</td><td>2월25일</td><td></td><td>34</td><td>남</td><td>창원</td><td>마산의료원</td><td>46</td><td>대구에서 중국인 접촉, 2.19 대구 방문</td><td></td></tr>
+<tr><td>554</td><td>929</td><td>경남-25</td><td>2월25일</td><td></td><td>48</td><td>남</td><td>창원</td><td>창원경상대병원 퇴원</td><td>0</td><td>불명</td><td></td></tr>
+<tr><td>555</td><td>989</td><td>경남-24</td><td>2월25일</td><td></td><td>31</td><td>남</td><td>남해</td><td>양산부산대병원</td><td>29</td><td>대구 확진자 접촉</td><td></td></tr>
+<tr><td>556</td><td></td><td>경남-23</td><td>2월24일</td><td></td><td>67</td><td>남</td><td>창원</td><td>창원경상대병원</td><td>16</td><td>대구 신천지 방문 가족 접촉</td><td></td></tr>
+<tr><td>557</td><td>756</td><td>경남-22</td><td>2월24일</td><td></td><td>51</td><td>여</td><td>김해</td><td>마산의료원</td><td>12</td><td>경남-15번 확진자 가족</td><td></td></tr>
+<tr><td>558</td><td>510</td><td>경남-21</td><td>2월24일</td><td></td><td>72</td><td>남</td><td>합천</td><td>마산의료원</td><td>38</td><td>경남-20번 확진자 가족</td><td></td></tr>
+<tr><td>559</td><td>509</td><td>경남-20</td><td>2월24일</td><td></td><td>65</td><td>여</td><td>합천</td><td>마산의료원</td><td>1</td><td>신천지 대구교회 2.2-3 방문</td><td></td></tr>
+<tr><td>560</td><td>511</td><td>경남-19</td><td>2월24일</td><td></td><td>20</td><td>여</td><td>합천</td><td>마산의료원</td><td>2</td><td>신천지 대구교회 2.9.16 방문</td><td></td></tr>
+<tr><td>561</td><td>508</td><td>경남-18</td><td>2월24일</td><td></td><td>39</td><td>여</td><td>합천</td><td>마산의료원</td><td>1</td><td>신천지 대구교회 2.16 방문</td><td></td></tr>
+<tr><td>562</td><td>732</td><td>경남-17</td><td>2월23일</td><td></td><td>29</td><td>여</td><td>양산</td><td>양산부산대병원</td><td>17</td><td>신천지 대구교회 2.16 방문</td><td></td></tr>
+<tr><td>563</td><td>727</td><td>경남-16</td><td>2월23일</td><td></td><td>34</td><td>남</td><td>합천</td><td>마산의료원</td><td>2</td><td>신천지 대구교회 2.15, 16 방문</td><td></td></tr>
+<tr><td>564</td><td>577</td><td>경남-15</td><td>2월23일</td><td></td><td>26</td><td>여</td><td>김해</td><td>마산의료원</td><td>32</td><td>부산 온천교회 2.15-16 수련회</td><td></td></tr>
+<tr><td>565</td><td>564</td><td>경남-14</td><td>2월23일</td><td></td><td>32</td><td>남</td><td>창원</td><td>마산의료원</td><td>3</td><td>신천지 대구교회 2.9 방문</td><td></td></tr>
+<tr><td>566</td><td>578</td><td>경남-13</td><td>2월23일</td><td></td><td>77</td><td>여</td><td>고성</td><td>마산의료원 퇴원</td><td>25</td><td>신천지 대구교회 2.16 방문</td><td></td></tr>
+<tr><td>567</td><td>566</td><td>경남-12</td><td>2월23일</td><td></td><td>49</td><td>남</td><td>창원</td><td>창원경상대병원</td><td>16</td><td>경남-5번 확진자 접촉</td><td></td></tr>
+<tr><td>568</td><td>572</td><td>경남-11</td><td>2월23일</td><td></td><td>26</td><td>남</td><td>함양</td><td>마산의료원</td><td>0</td><td>대구 확진자 접촉</td><td></td></tr>
+<tr><td>569</td><td>563</td><td>경남-10</td><td>2월23일</td><td></td><td>20</td><td>여</td><td>창원</td><td>마산의료원</td><td>2</td><td>신천지 대구교회 2.16 방문</td><td></td></tr>
+<tr><td>570</td><td>886</td><td>경남-9</td><td>2월23일</td><td></td><td>33</td><td>여</td><td>거제</td><td>마산의료원 퇴원</td><td>12</td><td>말레이, 미얀마 여행</td><td></td></tr>
+<tr><td>571</td><td>551</td><td>경남-8</td><td>2월22일</td><td></td><td>70</td><td>남</td><td>양산</td><td>양산부산대병원</td><td>13</td><td>대구 신천지 31번 확진자 접촉</td><td></td></tr>
+<tr><td>572</td><td>549</td><td>경남-7</td><td>2월22일</td><td></td><td>21</td><td>남</td><td>창원</td><td>양산부산대병원</td><td>39</td><td>대구 방문, 경남-5번 확진자 가족</td><td></td></tr>
+<tr><td>573</td><td>479</td><td>경남-6</td><td>2월22일</td><td></td><td>40</td><td>여</td><td>합천</td><td>마산의료원 퇴원</td><td>40</td><td>신천지 관련 시설 방문</td><td></td></tr>
+<tr><td>574</td><td>490</td><td>경남-5</td><td>2월22일</td><td></td><td>47</td><td>여</td><td>창원</td><td>양산부산대병원</td><td>82</td><td>대구 방문한 경남-7번 확진자 가족</td><td></td></tr>
+<tr><td>575</td><td>158</td><td>경남-4</td><td>2월21일</td><td></td><td>14</td><td>남</td><td>진주</td><td>마산의료원</td><td>0</td><td>신천지 대구교회 방문</td><td></td></tr>
+<tr><td>576</td><td>157</td><td>경남-3</td><td>2월21일</td><td></td><td>19</td><td>남</td><td>진주</td><td>마산의료원</td><td>272</td><td>신천지 대구교회 2.16 방문</td><td></td></tr>
+<tr><td>577</td><td>127</td><td>경남-2</td><td>2월20일</td><td></td><td>72</td><td>여</td><td>합천</td><td>경상대병원</td><td>28</td><td>신천지 대구교회</td><td></td></tr>
+<tr><td>578</td><td>125</td><td>경남-1</td><td>2월20일</td><td></td><td>24</td><td>남</td><td>합천</td><td>경상대병원</td><td>5</td><td>신천지 대구교회</td><td></td></tr>
+<tr><td>579</td><td></td><td>제주-4</td><td>3월3일</td><td>2월21일</td><td>46</td><td>남</td><td>제주</td><td></td><td>74</td><td>대구 방문</td><td>두통</td></tr>
+<tr><td>580</td><td></td><td>제주-3</td><td>3월2일</td><td>2월27일</td><td>48</td><td>여</td><td></td><td>제주대병원</td><td>21</td><td>대구에서 방문, 어머니가 대구에서 확진 판정</td><td>코 막힘, 목 막힘</td></tr>
+<tr><td>581</td><td>222</td><td>제주-2</td><td>2월22일</td><td></td><td>22</td><td>여</td><td>서귀포</td><td>제주대병원</td><td></td><td>호텔 직원, 대구 2.16 방문</td><td></td></tr>
+<tr><td>582</td><td>139</td><td>제주-1</td><td>2월21일</td><td></td><td>22</td><td>남</td><td>제주</td><td>한라병원</td><td></td><td>군인, 대구 2.18 방문</td><td></td></tr>
+</tbody>
+<script>
+	$(document).ready(function() {
+    $('#table20').DataTable({
+    "columnDefs": [],
+    "order": [],
+    "Dom": '<"top"f>t<"bottom"p><"clear">',
+    "language": {
+    "sEmptyTable":     "자료가 없습니다",
+   "sInfo":           "",
+   "sInfoEmpty":      "0 - 0 / 0",
+   "sInfoFiltered":   "",
+   "sInfoPostFix":    "",
+   "sInfoThousands":  ",",
+   "sLengthMenu":     "",
+   "sLoadingRecords": "읽는 중...",
+   "sProcessing":     "처리 중...",
+   "sSearch":         "지역, 신천지 등 특성별로 찾기",
+   "sZeroRecords":    "검색 결과가 없습니다",
+   "oPaginate": {
+       "sFirst":    "처음",
+       "sLast":     "마지막",
+       "sNext":     "다음",
+       "sPrevious": "이전"
+   },
+   "oAria": {
+       "sSortAscending":  ": 오름차순 정렬",
+       "sSortDescending": ": 내림차순 정렬"
+   }
+    },
+    scrollY: '100vh',
+    scrollCollapse: true,
+    scrollX: true,
+    paging: true,
+    "lengthMenu": [20, 30]});
+} );
+	</script>
+</body>
+</html>
